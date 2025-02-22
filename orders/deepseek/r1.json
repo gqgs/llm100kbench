@@ -1,0 +1,19 @@
+{
+    "updates": [
+      {
+        "ticket": "USD",
+        "quantity": 100000,
+        "price": 1,
+        "action": "SELL"
+      },
+      {
+        "ticket": "NVDA",
+        "quantity": 125,
+        "price": 800,
+        "action": "BUY"
+      }
+    ],
+    "context": [
+      "Allocated $100k to NVDA due to strong anticipated growth in AI and data center markets, expecting upcoming product launches to drive stock appreciation."
+    ]
+  }

@@ -40,7 +40,7 @@ Additional Details:
 - Your response should be in the STRICTLY defined JSON format defined above.
 - Be explicit about all the necessary operations for you to update the portofio update. (e.g. if you're selling a ticket to buy another you have explicitly describe both operations)
 - Are you allowed to use any tools that are available to you.
-- The net loss of your operation should always be equal to zero.
+- The net change of your operation should always be equal to zero.
 
 Example Input:
 ```

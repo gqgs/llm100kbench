@@ -34,5 +34,5 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed getting holdings: %w", err)
 	}
 
-	return json.NewEncoder(os.Stdout).Encode(potfolio.New(holdings, nil))
+	return json.NewEncoder(os.Stdout).Encode(potfolio.New(holdings, make([]string, 0)))
 }

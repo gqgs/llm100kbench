@@ -50,12 +50,15 @@ func NewSqlite(dbPath, model string) (*sqliteStorage, error) {
 		return nil, err
 	}
 
-	if _, err = db.Exec("CREATE INDEX IF NOT EXISTS idx_ticket on holdings(ticket)"); err != nil {
-		return nil, err
-	}
-
-	if _, err = db.Exec("CREATE INDEX IF NOT EXISTS idx_model on holdings(model)"); err != nil {
-		return nil, err
+	for _, index := range []string{
+		"CREATE INDEX IF NOT EXISTS idx_ticket on holdings(ticket)",
+		"CREATE INDEX IF NOT EXISTS idx_model on holdings(model)",
+		"CREATE INDEX IF NOT EXISTS idx_model_quantity on holdings(model, quantity)",
+		"CREATE INDEX IF NOT EXISTS idx_positions on holdings(model, ticket, quantity)",
+	} {
+		if _, err := db.Exec(index); err != nil {
+			return nil, err
+		}
 	}
 
 	storage = &sqliteStorage{
@@ -76,7 +79,7 @@ func (s *sqliteStorage) CreateHolding(ctx context.Context, ticket string, sum, q
 }
 
 func (s *sqliteStorage) GetHoldings(ctx context.Context) (holding.Holdings, error) {
-	rows, err := s.db.QueryContext(ctx, "SELECT ticket, sum, quantity, created_at, updated_at FROM holdings WHERE model = ?", s.model)
+	rows, err := s.db.QueryContext(ctx, "SELECT ticket, sum, quantity, created_at, updated_at FROM holdings WHERE model = ? AND quantity > 0", s.model)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +97,7 @@ func (s *sqliteStorage) GetHoldings(ctx context.Context) (holding.Holdings, erro
 }
 
 func (s *sqliteStorage) GetHolding(ctx context.Context, ticket string) (*holding.Holding, error) {
-	row := s.db.QueryRowContext(ctx, "SELECT ticket, sum, quantity FROM holdings WHERE ticket = ? AND model = ?", ticket, s.model)
+	row := s.db.QueryRowContext(ctx, "SELECT ticket, sum, quantity FROM holdings WHERE ticket = ? AND model = ? AND quantity > 0", ticket, s.model)
 	var holding holding.Holding
 	err := row.Scan(&holding.Ticket, &holding.Sum, &holding.Quantity)
 	return &holding, err

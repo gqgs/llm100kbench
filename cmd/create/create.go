@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-//go:generate go run github.com/gqgs/argsgen
+//go:generate go run github.com/gqgs/argsgen@latest
 
 type options struct {
 	db    string `arg:"database name (sqlite),required"`
@@ -14,7 +14,7 @@ type options struct {
 
 func main() {
 	opts := options{
-		db: "llminvestbench.db",
+		db: "llm100kbench.db",
 	}
 	opts.MustParse()
 

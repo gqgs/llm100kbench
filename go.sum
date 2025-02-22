@@ -1,0 +1,4 @@
+github.com/gqgs/argsgen v1.1.1 h1:e/xKk5X5raYsO+nqmI0K58u0Vxlh0HDAc7FUgHRow4s=
+github.com/gqgs/argsgen v1.1.1/go.mod h1:8V2V3BFCQOWmyf0MIFlSZePjMxofWPIQcwePmVsxHLI=
+github.com/mattn/go-sqlite3 v1.14.24 h1:tpSp2G2KyMnnQu99ngJ47EIkWVmliIizyZBfPrBWDRM=
+github.com/mattn/go-sqlite3 v1.14.24/go.mod h1:Uh1q+B4BYcTPb+yiD3kU8Ct7aC0hY9fxUwlHK0RXw+Y=

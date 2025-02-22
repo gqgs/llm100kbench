@@ -1,20 +1,19 @@
 {
-    "updates": [
-      {
-        "ticket": "USD",
-        "quantity": 100000,
-        "price": 1,
-        "action": "SELL"
-      },
-      {
-        "ticket": "SPY",
-        "quantity": 200,
-        "price": 500,
-        "action": "BUY"
-      }
-    ],
-    "context": [
-      "Allocated $100k to SPY (S&P 500 ETF) for broad market exposure and diversification."
-    ]
-  }
-  
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 100000,
+      "price": 1,
+      "action": "SELL"
+    },
+    {
+      "ticket": "TSLA",
+      "quantity": 200,
+      "price": 500,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Allocated $100k to TLSA because I believe there is a high probablility the market will react well for their upcoming report."
+  ]
+}

@@ -1,49 +1,49 @@
 {
-    "updates": [
-      {
-        "ticket": "USD",
-        "quantity": 100000,
-        "price": 1,
-        "action": "SELL"
-      },
-      {
-        "ticket": "AAPL",
-        "quantity": 122,
-        "price": 245.55,
-        "action": "BUY"
-      },
-      {
-        "ticket": "MSFT",
-        "quantity": 73,
-        "price": 408.21,
-        "action": "BUY"
-      },
-      {
-        "ticket": "AMZN",
-        "quantity": 92,
-        "price": 216.58,
-        "action": "BUY"
-      },
-      {
-        "ticket": "GOOGL",
-        "quantity": 55,
-        "price": 179.66,
-        "action": "BUY"
-      },
-      {
-        "ticket": "TSLA",
-        "quantity": 30,
-        "price": 337.8,
-        "action": "BUY"
-      },
-      {
-        "ticket": "USD",
-        "quantity": 303,
-        "price": 1,
-        "action": "BUY"
-      }
-    ],
-    "context": [
-      "Reallocated the $100k cash position into a diversified basket of top tech growth stocks—Apple, Microsoft, Amazon, Alphabet, and Tesla—to capture strong 2025 growth potential while retaining a small cash reserve for liquidity."
-    ]
-  }
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 100000,
+      "price": 1,
+      "action": "SELL"
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 122,
+      "price": 245.55,
+      "action": "BUY"
+    },
+    {
+      "ticket": "MSFT",
+      "quantity": 73,
+      "price": 408.21,
+      "action": "BUY"
+    },
+    {
+      "ticket": "AMZN",
+      "quantity": 92,
+      "price": 216.58,
+      "action": "BUY"
+    },
+    {
+      "ticket": "GOOGL",
+      "quantity": 55,
+      "price": 179.66,
+      "action": "BUY"
+    },
+    {
+      "ticket": "TSLA",
+      "quantity": 30,
+      "price": 337.8,
+      "action": "BUY"
+    },
+    {
+      "ticket": "USD",
+      "quantity": 303,
+      "price": 1,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Reallocated the $100k cash position into a diversified basket of top tech growth stocks—Apple, Microsoft, Amazon, Alphabet, and Tesla—to capture strong 2025 growth potential while retaining a small cash reserve for liquidity."
+  ]
+}

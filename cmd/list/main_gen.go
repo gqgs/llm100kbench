@@ -13,6 +13,7 @@ func (o *options) flagSet() *flag.FlagSet {
     flagSet := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
     flagSet.StringVar(&o.db, "db", o.db, "database name (sqlite)")
     flagSet.StringVar(&o.model, "model", o.model, "name of the model")
+    flagSet.BoolVar(&o.roundsums, "roundsums", o.roundsums, "if it should round sums")
     return flagSet
 }
 

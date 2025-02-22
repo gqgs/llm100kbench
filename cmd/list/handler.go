@@ -24,6 +24,10 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed getting holdings: %w", err)
 	}
 
+	if opts.roundsums {
+		holdings.RoundSums()
+	}
+
 	contexts, err := manager.GetRecentContext(ctx)
 	if err != nil {
 		return fmt.Errorf("failed getting recent context: %w", err)

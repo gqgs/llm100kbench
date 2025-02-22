@@ -10,8 +10,9 @@ import (
 //go:generate go run github.com/gqgs/argsgen@latest
 
 type options struct {
-	db    string `arg:"database name (sqlite),required"`
-	model string `arg:"name of the model,required"`
+	db        string `arg:"database name (sqlite),required"`
+	model     string `arg:"name of the model,required"`
+	roundsums bool   `arg:"if it should round sums"`
 }
 
 func main() {

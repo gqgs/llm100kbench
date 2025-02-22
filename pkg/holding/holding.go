@@ -2,6 +2,7 @@ package holding
 
 import (
 	"fmt"
+	"math"
 	"strings"
 	"time"
 
@@ -28,6 +29,12 @@ func (h Holdings) String() string {
 		builder.WriteString(h.String())
 	}
 	return builder.String()
+}
+
+func (h Holdings) RoundSums() {
+	for _, hh := range h {
+		hh.Sum = math.Floor(hh.Sum)
+	}
 }
 
 func (h *Holding) Update(update *order.Update) {

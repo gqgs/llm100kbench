@@ -7,13 +7,13 @@
       "action": "SELL"
     },
     {
-      "ticket": "TSLA",
-      "quantity": 200,
-      "price": 500,
+      "ticket": "AAPL",
+      "quantity": 588,
+      "price": 170,
       "action": "BUY"
     }
   ],
   "context": [
-    "Allocated $100k to TLSA because I believe there is a high probablility the market will react well for their upcoming report."
+    "Investing in AAPL as a stable tech stock with growth potential in the current market."
   ]
 }

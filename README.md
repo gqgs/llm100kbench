@@ -44,3 +44,12 @@ The most recent prompt with the clear guidelines can be see [here](./cmd/create/
 |`o3-mini`|`AMZN`|19925|92|
 |`o3-mini`|`AAPL`|29957|122|
 |`o3-mini`|`USD`|303|303|
+
+
+| Model | Total Sum | Change |
+|-------|-----------|--------|
+|`deepseek-r1`|100000|—|
+|`claude3.5`|100000|—|
+|`o3-mini`|99999|—|
+|`grok3`|99960|—|
+|`gemini2.0-flash`|99960|—|

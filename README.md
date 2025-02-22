@@ -31,6 +31,7 @@ The most recent prompt with the clear guidelines can be see [here](./cmd/create/
 |`claude3.5`|`MSFT`|20000|50|
 |`claude3.5`|`VOO`|60000|150|
 |`deepseek-r1`|`NVDA`|100000|125|
+|`gemini2.0-flash`|`SPY`|100000|200|
 |`grok3`|`BRK.B`|20000|50|
 |`grok3`|`IWM`|15000|75|
 |`grok3`|`METL`|10000|100|
@@ -43,5 +44,4 @@ The most recent prompt with the clear guidelines can be see [here](./cmd/create/
 |`o3-mini`|`AMZN`|19925|92|
 |`o3-mini`|`AAPL`|29957|122|
 |`o3-mini`|`USD`|303|303|
-
 

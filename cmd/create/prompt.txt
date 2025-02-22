@@ -9,7 +9,7 @@ type (
         creadted_at: DateTime
         updated_at: DateTime
     }
-    Context: string[]
+    Context: string
     Update: {
         ticket: String
         quantity: Integer
@@ -21,15 +21,15 @@ type (
 Objective:
 Maximize the total value of your holdings.
 
-At each iteration, you will receive: (Holding[], string[])
+At each iteration, you will receive: (Holding[], Context[])
 
 - A list of assets representing your current portfolio
 - A list of string represented context carried forward from previous iterations (limited to the 3 most recent)
 
-Your task is to return: (Update[], Context)
+Your task is to return: (Update[], Context[])
 
 - Updates to your portfolio, specifying which securities (tickets) will be bought and which will be sold and the price.
-- Any additional context to be appended and passed along to the immediate next iteration that might help you make better deicions in the next iterations.
+- The updated context where you can append a new line containing any additional information that might help you make better decisions in the next iterations.
 
 Additional Details:
 

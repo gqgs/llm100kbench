@@ -1,8 +1,10 @@
 package main
 
 import (
+	"cmp"
 	"context"
 	"log"
+	"os"
 )
 
 //go:generate go run github.com/gqgs/argsgen@latest
@@ -14,7 +16,7 @@ type options struct {
 
 func main() {
 	opts := options{
-		db: "llm100kbench.db",
+		db: cmp.Or(os.Getenv("LLM_BENCH_DATABASE"), "llm100kbench.db"),
 	}
 	opts.MustParse()
 

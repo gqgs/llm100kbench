@@ -9,6 +9,8 @@ This project provides a framework to create, manage, and track investment portfo
 - List current holdings and recent context
 - Update portfolios based on model decisions
 
+The model executions and their current context can be seen [here](./orders).
+
 
 ## Project Structure
 

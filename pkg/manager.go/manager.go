@@ -11,6 +11,7 @@ const (
 	defaultTicket   = "USD"
 	defaultSum      = 100_000
 	defaultQuantity = 100_000
+	contextLimit    = 3
 )
 
 type Manager struct {
@@ -38,4 +39,12 @@ func (m *Manager) GetHolding(ctx context.Context, ticket string) (*holding.Holdi
 
 func (m *Manager) SaveHoldings(ctx context.Context, holdings holding.Holdings) error {
 	return m.storage.SaveHoldings(ctx, holdings)
+}
+
+func (m *Manager) SaveContext(ctx context.Context, orderCtx string) error {
+	return m.storage.SaveContext(ctx, orderCtx)
+}
+
+func (m *Manager) GetRecentContext(ctx context.Context) ([]string, error) {
+	return m.storage.GetRecentContext(ctx, contextLimit)
 }

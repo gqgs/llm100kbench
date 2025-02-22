@@ -1,6 +1,7 @@
 package holding
 
 import (
+	"fmt"
 	"strings"
 	"time"
 
@@ -15,6 +16,18 @@ type Holding struct {
 	Quantity  int       `json:"quantity"`
 	UpdatedAt time.Time `json:"updated_at,omitempty"`
 	CreatedAt time.Time `json:"created_at,omitempty"`
+}
+
+func (h Holding) String() string {
+	return fmt.Sprintf("%s,%0.2f,%d\n", h.Ticket, h.Sum, h.Quantity)
+}
+
+func (h Holdings) String() string {
+	builder := new(strings.Builder)
+	for _, h := range h {
+		builder.WriteString(h.String())
+	}
+	return builder.String()
 }
 
 func (h *Holding) Update(update *order.Update) {

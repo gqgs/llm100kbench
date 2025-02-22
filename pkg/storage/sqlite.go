@@ -24,6 +24,18 @@ func NewSqlite(dbPath, model string) (*sqliteStorage, error) {
 		return nil, err
 	}
 
+	if _, err := db.Exec(`
+		CREATE TABLE IF NOT EXISTS context (
+			model TEXT,
+			context TEXT,
+			updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			PRIMARY KEY (model)
+		)
+	`); err != nil {
+		return nil, err
+	}
+
 	if _, err = db.Exec(`
 		CREATE TABLE IF NOT EXISTS holdings (
 			model TEXT,
@@ -101,4 +113,30 @@ func (s *sqliteStorage) SaveHoldings(ctx context.Context, holdings holding.Holdi
 		}
 	}
 	return tx.Commit()
+}
+
+func (s *sqliteStorage) SaveContext(ctx context.Context, context string) error {
+	_, err := s.db.ExecContext(ctx, "INSERT INTO context (model, context, created_at, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ON CONFLICT(model) DO UPDATE SET context = ?, updated_at = CURRENT_TIMESTAMP WHERE model = ?", s.model, context, context, s.model)
+	return err
+}
+
+func (s *sqliteStorage) GetRecentContext(ctx context.Context, limit int) ([]string, error) {
+	rows, err := s.db.QueryContext(ctx, "SELECT context FROM context WHERE model = ? ORDER BY created_at DESC LIMIT ?", s.model, limit)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	contexts := []string{}
+	for rows.Next() {
+		var context string
+		if err := rows.Scan(&context); err != nil {
+			return nil, err
+		}
+		contexts = append(contexts, context)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return contexts, nil
 }

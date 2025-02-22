@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	_ "embed"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -12,27 +11,23 @@ import (
 	"github.com/gqgs/llminvestbench/pkg/storage"
 )
 
-//go:embed prompt.txt
-var prompt string
-
 func handler(ctx context.Context, opts options) error {
 	storage, err := storage.NewSqlite(opts.db, opts.model)
 	if err != nil {
-		return fmt.Errorf("failed to open storage: %w", err)
+		return err
 	}
 	defer storage.Close()
 
 	manager := manager.New(storage)
-	if err = manager.CreateHoldings(ctx); err != nil {
-		return fmt.Errorf("failed creating holdings: %w", err)
-	}
-
-	fmt.Println(prompt)
-
 	holdings, err := manager.GetHoldings(ctx)
 	if err != nil {
 		return fmt.Errorf("failed getting holdings: %w", err)
 	}
 
-	return json.NewEncoder(os.Stdout).Encode(potfolio.New(holdings, nil))
+	contexts, err := manager.GetRecentContext(ctx)
+	if err != nil {
+		return fmt.Errorf("failed getting recent context: %w", err)
+	}
+
+	return json.NewEncoder(os.Stdout).Encode(potfolio.New(holdings, contexts))
 }

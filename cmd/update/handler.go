@@ -2,9 +2,7 @@ package main
 
 import (
 	"context"
-	_ "embed"
 	"fmt"
-	"log/slog"
 
 	"github.com/gqgs/llminvestbench/pkg/manager.go"
 	"github.com/gqgs/llminvestbench/pkg/order"
@@ -33,10 +31,14 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed processing order: %w", err)
 	}
 
+	// FIXME: ideally both would be executed in a transaction
 	if err := manager.SaveHoldings(ctx, holdings); err != nil {
 		return fmt.Errorf("failed saving holdings: %w", err)
 	}
 
-	slog.Info("Done!")
+	if err := manager.SaveContext(ctx, order.Context[len(order.Context)-1]); err != nil {
+		return fmt.Errorf("failed saving context: %w", err)
+	}
+
 	return nil
 }

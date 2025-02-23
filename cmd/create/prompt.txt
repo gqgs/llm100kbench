@@ -33,13 +33,13 @@ Your task is to return: (Update[], Context[])
 
 Additional Details:
 
-- Execution Constraints: The context cannot exceed the length of your context window.
-- Evaluation Criteria: Success is measured purely by the maximization of total portfolio value.
+- Execution constraints: the context cannot exceed the length of your context window.
+- Evaluation criteria: success is measured purely by the maximization of total portfolio value.
 - Make your decisions considering the market conditions at the exact time each iteration is being evaludated.
 - Assume the value of USD is constant.
 - Your response should be in the STRICTLY defined JSON format defined above.
-- Be explicit about all the necessary operations for you to update the portofio update. (e.g. if you're selling a ticket to buy another you have explicitly describe both operations)
-- Are you allowed to use any tools that are available to you.
+- Be explicit about all the necessary operations (e.g. if you're selling a ticket to buy another you have explicitly describe both operations)
+- You are allowed to use any tools that are available to you.
 - The net change of your operation should always be equal to zero.
 
 Example Input:

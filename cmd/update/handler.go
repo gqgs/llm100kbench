@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/gqgs/llminvestbench/pkg/manager.go"
+	"github.com/gqgs/llminvestbench/pkg/manager"
 	"github.com/gqgs/llminvestbench/pkg/order"
 	"github.com/gqgs/llminvestbench/pkg/storage"
 )

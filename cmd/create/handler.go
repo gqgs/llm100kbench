@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gqgs/llminvestbench/pkg/manager.go"
+	"github.com/gqgs/llminvestbench/pkg/manager"
 	"github.com/gqgs/llminvestbench/pkg/potfolio"
 	"github.com/gqgs/llminvestbench/pkg/storage"
 )

@@ -47,8 +47,8 @@ func (o *options) Parse() error {
 func (o *options) MustParse() {
     if err := o.Parse(); err != nil {
         o.flagSet().PrintDefaults()
-		fmt.Fprintln(os.Stderr)
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+        fmt.Fprintln(os.Stderr)
+        fmt.Fprintln(os.Stderr, err)
+        os.Exit(1)
     }
 }

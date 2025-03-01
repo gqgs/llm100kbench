@@ -14,6 +14,7 @@ func (o *options) flagSet() *flag.FlagSet {
     flagSet.StringVar(&o.db, "db", o.db, "database name (sqlite)")
     flagSet.StringVar(&o.model, "model", o.model, "name of the model")
     flagSet.BoolVar(&o.roundsums, "roundsums", o.roundsums, "if it should round sums")
+    flagSet.BoolVar(&o.prompt, "prompt", o.prompt, "if it should print prompt")
     return flagSet
 }
 

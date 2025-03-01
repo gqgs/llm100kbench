@@ -2,14 +2,17 @@ package main
 
 import (
 	"context"
+	_ "embed"
 	"encoding/json"
 	"fmt"
-	"os"
 
 	"github.com/gqgs/llminvestbench/pkg/manager"
 	"github.com/gqgs/llminvestbench/pkg/potfolio"
 	"github.com/gqgs/llminvestbench/pkg/storage"
 )
+
+//go:embed prompt.txt
+var prompt string
 
 func handler(ctx context.Context, opts options) error {
 	storage, err := storage.NewSqlite(opts.db, opts.model)
@@ -33,5 +36,16 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed getting recent context: %w", err)
 	}
 
-	return json.NewEncoder(os.Stdout).Encode(potfolio.New(holdings, contexts))
+	if opts.prompt {
+		fmt.Println(prompt)
+	}
+
+	encoded, err := json.MarshalIndent(potfolio.New(holdings, contexts), "", " ")
+	if err != nil {
+		return fmt.Errorf("error marshaling file: %w", err)
+	}
+
+	fmt.Println(string(encoded))
+
+	return nil
 }

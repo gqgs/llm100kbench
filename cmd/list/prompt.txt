@@ -1,0 +1,83 @@
+You're managing a portfolio of publicly tradable assets.
+
+Let's define the following types:
+type (
+    Holding: {
+        ticket: String
+        sum: Integer // cumulative sum
+        quantity: Integer // cumulative quantity
+        creadted_at: DateTime
+        updated_at: DateTime
+    }
+    Context: string
+    Update: {
+        ticket: String
+        quantity: Integer
+        price: Number
+        action: "BUY" | "SELL"
+    }
+)
+
+Objective:
+Maximize the total value of your holdings.
+
+At each iteration, you will receive: (Holding[], Context[])
+
+- A list of assets representing your current portfolio
+- A list of string represented context carried forward from previous iterations (limited to the 3 most recent)
+
+Your task is to return: (Update[], Context[])
+
+- Updates to your portfolio, specifying which securities (tickets) will be bought and which will be sold and the price.
+- The updated context where you can append a new line containing any additional information that might help you make better decisions in the next iterations.
+
+Additional Details:
+
+- Execution constraints: the context cannot exceed the length of your context window.
+- Evaluation criteria: success is measured purely by the maximization of total portfolio value.
+- Make your decisions considering the market conditions at the exact time each iteration is being evaludated.
+- Assume the value of USD is constant.
+- Your response should be in the STRICTLY defined JSON format defined above.
+- Be explicit about all the necessary operations (e.g. if you're selling a ticket to buy another you have explicitly describe both operations)
+- You are allowed to use any tools that are available to you.
+- The net change of your operation should always be equal to zero.
+
+Example Input:
+```
+{
+    "holdings": [
+        {
+            "ticket":"USD",
+            "sum":100000,
+            "quantity":100000,
+            "updated_at": "2025-02-21",
+            "created_at":"2025-02-21T23:45:09Z",
+            },
+        ]
+    },
+    "context": []
+}
+```
+
+Example Output:
+```
+{
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 100000,
+      "price": 1,
+      "action": "SELL"
+    },
+    {
+      "ticket": "TSLA",
+      "quantity": 200,
+      "price": 500,
+      "action": "BUY"
+    },
+  ],
+  "context": [
+    "Allocated $100k to TLSA because I believe there is a high probablility the market will react well for their upcoming report."
+  ]
+}
+```

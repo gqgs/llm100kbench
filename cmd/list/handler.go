@@ -45,6 +45,8 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("error marshaling file: %w", err)
 	}
 
+	fmt.Println("Your current portfolio:")
+
 	fmt.Println(string(encoded))
 
 	return nil

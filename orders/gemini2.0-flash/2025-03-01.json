@@ -1,0 +1,19 @@
+{
+    "updates": [
+      {
+        "ticket": "AAPL",
+        "quantity": 588,
+        "price": 169.99,
+        "action": "SELL"
+      },
+      {
+        "ticket": "NVDA",
+        "quantity": 294,
+        "price": 339.99,
+        "action": "BUY"
+      }
+    ],
+    "context": [
+      "Investing in NVDA as it shows stronger growth potential in the current AI-driven market compared to AAPL. Sold AAPL to reallocate funds to NVDA."
+    ]
+  }

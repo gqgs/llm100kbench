@@ -1,0 +1,32 @@
+{
+  "updates": [
+    {
+      "ticket": "BTCETF",
+      "quantity": 100,
+      "price": 50,
+      "action": "SELL"
+    },
+    {
+      "ticket": "BSV",
+      "quantity": 156,
+      "price": 80,
+      "action": "SELL"
+    },
+    {
+      "ticket": "MFG",
+      "quantity": 58,
+      "price": 150,
+      "action": "BUY"
+    },
+    {
+      "ticket": "ENG",
+      "quantity": 72,
+      "price": 120,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Monitor impact of Trump policies on sectors; watch Fed rate cuts and inflation.",
+    "Reallocated from cryptocurrencies to manufacturing and energy sectors to align with expected policy impacts."
+  ]
+}

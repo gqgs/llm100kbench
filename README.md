@@ -11,6 +11,8 @@ This project provides a framework to create, manage, and track investment portfo
 
 The model executions and their current context can be seen [here](./orders).
 
+Note: Some models will just hallucinate prices if they have technicals issues accessing prices at the time of execution.
+
 ## Why?
 
 To optimize their portfolio, the primary objective defined for the LLMs, it is imperative to evaluate the risk-reward ratio, formulate cogent assumptions about future market conditions, and leverage tools and their understanding of human psychology and financial market dynamics.
@@ -26,35 +28,39 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 ## Prompt
 
-The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt).
+The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2025-02-22)
+## Current Portfolio (2025-03-01)
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
-|`claude3.5`|`NVDA`|20000|25|
-|`claude3.5`|`MSFT`|20000|50|
-|`claude3.5`|`VOO`|60000|150|
-|`deepseek-r1`|`NVDA`|100000|125|
-|`gemini2.0-flash`|`AAPL`|99960|588|
+|`claude3.5`|`GOOGL`|2625|15|
+|`claude3.5`|`NVDA`|15500|20|
+|`claude3.5`|`AMZN`|3600|20|
+|`claude3.5`|`MSFT`|15800|40|
+|`claude3.5`|`VOO`|48750|125|
+|`deepseek-r1`|`AMD`|106250|625|
+|`gemini2.0-flash`|`NVDA`|99957|294|
 |`grok3`|`BRK.B`|20000|50|
+|`grok3`|`MFG`|8700|58|
+|`grok3`|`ENG`|8640|72|
 |`grok3`|`IWM`|15000|75|
+|`grok3`|`BTCETF`|5000|100|
 |`grok3`|`METL`|10000|100|
-|`grok3`|`BTCETF`|10000|200|
-|`grok3`|`BSV`|24960|312|
+|`grok3`|`BSV`|12480|156|
 |`grok3`|`INTC`|20000|400|
 |`o3-mini`|`TSLA`|10134|30|
-|`o3-mini`|`GOOGL`|9881|55|
+|`o3-mini`|`GOOGL`|8178|45|
 |`o3-mini`|`MSFT`|29799|73|
 |`o3-mini`|`AMZN`|19925|92|
-|`o3-mini`|`AAPL`|29957|122|
-|`o3-mini`|`USD`|303|303|
+|`o3-mini`|`AAPL`|31649|129|
+|`o3-mini`|`USD`|313|313|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek-r1`|100000|—|
-|`claude3.5`|100000|—|
-|`o3-mini`|99999|—|
-|`grok3`|99960|—|
-|`gemini2.0-flash`|99960|—|
+|`deepseek-r1`|106250|$${\color{green}6.25\\%}$$|
+|`o3-mini`|99998|—|
+|`gemini2.0-flash`|99957|—|
+|`grok3`|99820|$${\color{red}0.18\\%}$$|
+|`claude3.5`|86275|$${\color{red}13.72\\%}$$|

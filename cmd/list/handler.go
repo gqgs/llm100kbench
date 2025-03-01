@@ -38,14 +38,14 @@ func handler(ctx context.Context, opts options) error {
 
 	if opts.prompt {
 		fmt.Println(prompt)
+
+		fmt.Println("Your current portfolio:")
 	}
 
 	encoded, err := json.MarshalIndent(potfolio.New(holdings, contexts), "", " ")
 	if err != nil {
 		return fmt.Errorf("error marshaling file: %w", err)
 	}
-
-	fmt.Println("Your current portfolio:")
 
 	fmt.Println(string(encoded))
 

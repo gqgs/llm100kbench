@@ -1,0 +1,19 @@
+{
+  "updates": [
+    {
+      "ticket": "NVDA",
+      "quantity": 125,
+      "price": 850,
+      "action": "SELL"
+    },
+    {
+      "ticket": "AMD",
+      "quantity": 625,
+      "price": 170,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Sold NVDA at $850 per share after 6.25% gain to capitalize on recent AI-driven rally. Reallocated $106,250 to AMD, anticipating stronger growth from new data center GPU launches and undervalued stock position."
+  ]
+}

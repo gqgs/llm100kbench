@@ -1,0 +1,32 @@
+{
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 100000,
+      "price": 1,
+      "action": "SELL"
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 209,
+      "price": 239.07,
+      "action": "BUY"
+    },
+    {
+      "ticket": "ADBE",
+      "quantity": 66,
+      "price": 449.40,
+      "action": "BUY"
+    },
+    {
+      "ticket": "ACGL",
+      "quantity": 219,
+      "price": 91.00,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Initial holdings",
+    "Allocated $100k across AAPL (50%), ADBE (30%), and ACGL (20%) on 2025-03-10. Focused on large-cap Tech (AAPL, ADBE) for growth and liquidity, and Finance (ACGL) for stability."
+  ]
+}

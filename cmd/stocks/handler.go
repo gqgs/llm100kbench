@@ -25,6 +25,7 @@ func handler(opts options) error {
 	if err != nil {
 		return fmt.Errorf("failed to create file: %w", err)
 	}
+	defer file.Close()
 
 	records := make([][]string, 0, len(stocks)+1)
 	records = append(records, []string{"ticket", "price"})

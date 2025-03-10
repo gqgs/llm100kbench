@@ -1,0 +1,26 @@
+{
+  "updates": [
+    {
+      "ticket": "VOO",
+      "quantity": 25,
+      "price": 500,
+      "action": "SELL"
+    },
+    {
+      "ticket": "NVDA",
+      "quantity": 5,
+      "price": 1150,
+      "action": "BUY"
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 30,
+      "price": 200,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Adding GOOGL and AMZN for AI diversification and e-commerce growth ahead of Q1 2025 earnings",
+    "Reducing VOO exposure to increase allocation to NVDA given continued AI chip demand and adding AAPL position ahead of anticipated Vision Pro sales momentum and services growth"
+  ]
+}

@@ -21,17 +21,21 @@ func handler(opts options) error {
 		return fmt.Errorf("failed to decode tickers: %w", err)
 	}
 
-	file, err := os.Create(opts.output)
-	if err != nil {
-		return fmt.Errorf("failed to create file: %w", err)
-	}
-	defer file.Close()
-
 	records := make([][]string, 0, len(stocks)+1)
 	records = append(records, []string{"ticket", "price"})
 	for _, stock := range stocks {
 		records = append(records, []string{stock.Symbol, stock.Lastsale})
 	}
 
-	return csv.NewWriter(file).WriteAll(records)
+	file, err := os.Create(opts.output)
+	if err != nil {
+		return fmt.Errorf("failed to create file: %w", err)
+	}
+	defer file.Close()
+
+	if err = csv.NewWriter(file).WriteAll(records); err != nil {
+		return fmt.Errorf("failed to create csv file: %w", err)
+	}
+
+	return nil
 }

@@ -1,0 +1,32 @@
+{
+  "updates": [
+    {
+      "ticket": "INTC",
+      "quantity": 400,
+      "price": 45,
+      "action": "SELL"
+    },
+    {
+      "ticket": "BSV",
+      "quantity": 156,
+      "price": 81,
+      "action": "SELL"
+    },
+    {
+      "ticket": "BRK.B",
+      "quantity": 40,
+      "price": 515,
+      "action": "BUY"
+    },
+    {
+      "ticket": "BTCETF",
+      "quantity": 186,
+      "price": 55,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Reallocated from cryptocurrencies to manufacturing and energy sectors to align with expected policy impacts.",
+    "Sold INTC and BSV due to underperformance and low yield; bought more BRK.B for stability and BTCETF for growth potential."
+  ]
+}

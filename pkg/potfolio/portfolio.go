@@ -1,6 +1,10 @@
 package potfolio
 
-import "github.com/gqgs/llminvestbench/pkg/holding"
+import (
+	"encoding/json"
+
+	"github.com/gqgs/llminvestbench/pkg/holding"
+)
 
 type portifolio struct {
 	Holdings holding.Holdings `json:"holdings"`
@@ -12,4 +16,9 @@ func New(holdings holding.Holdings, context []string) *portifolio {
 		Holdings: holdings,
 		Context:  context,
 	}
+}
+
+func (p portifolio) String() string {
+	encoded, _ := json.MarshalIndent(p, "", " ")
+	return string(encoded)
 }

@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	_ "embed"
-	"encoding/json"
 	"fmt"
 
 	"github.com/gqgs/llminvestbench/pkg/manager"
@@ -36,12 +35,7 @@ func handler(ctx context.Context, opts options) error {
 	fmt.Println("Your current portfolio:")
 	fmt.Println("```")
 
-	encoded, err := json.MarshalIndent(potfolio.New(holdings, []string{"Initial holdings"}), "", " ")
-	if err != nil {
-		return fmt.Errorf("error marshaling file: %w", err)
-	}
-
-	fmt.Println(string(encoded))
+	fmt.Println(potfolio.New(holdings, []string{"Initial holdings"}))
 	fmt.Println("```")
 
 	return nil

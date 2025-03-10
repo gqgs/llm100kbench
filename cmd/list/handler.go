@@ -7,6 +7,7 @@ import (
 
 	"github.com/gqgs/llminvestbench/pkg/manager"
 	"github.com/gqgs/llminvestbench/pkg/potfolio"
+	"github.com/gqgs/llminvestbench/pkg/service"
 	"github.com/gqgs/llminvestbench/pkg/storage"
 )
 
@@ -14,13 +15,14 @@ import (
 var prompt string
 
 func handler(ctx context.Context, opts options) error {
-	storage, err := storage.NewSqlite(opts.db, opts.model)
+	storage, err := storage.NewSqlite(opts.db)
 	if err != nil {
 		return err
 	}
 	defer storage.Close()
 
-	manager := manager.New(storage)
+	service := service.New(storage)
+	manager := manager.New(service, opts.model)
 	holdings, err := manager.GetHoldings(ctx)
 	if err != nil {
 		return fmt.Errorf("failed getting holdings: %w", err)

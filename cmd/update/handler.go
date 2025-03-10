@@ -6,11 +6,12 @@ import (
 
 	"github.com/gqgs/llminvestbench/pkg/manager"
 	"github.com/gqgs/llminvestbench/pkg/order"
+	"github.com/gqgs/llminvestbench/pkg/service"
 	"github.com/gqgs/llminvestbench/pkg/storage"
 )
 
 func handler(ctx context.Context, opts options) error {
-	storage, err := storage.NewSqlite(opts.db, opts.model)
+	storage, err := storage.NewSqlite(opts.db)
 	if err != nil {
 		return err
 	}
@@ -21,7 +22,8 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed parsing order: %w", err)
 	}
 
-	manager := manager.New(storage)
+	service := service.New(storage)
+	manager := manager.New(service, opts.model)
 	holdings, err := manager.GetHoldings(ctx)
 	if err != nil {
 		return fmt.Errorf("failed getting holdings: %w", err)
@@ -31,13 +33,8 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed processing order: %w", err)
 	}
 
-	// FIXME: ideally both would be executed in a transaction
-	if err := manager.SaveHoldings(ctx, holdings); err != nil {
-		return fmt.Errorf("failed saving holdings: %w", err)
-	}
-
-	if err := manager.SaveContext(ctx, order.Context[len(order.Context)-1]); err != nil {
-		return fmt.Errorf("failed saving context: %w", err)
+	if err := manager.Save(ctx, holdings, order.Context[len(order.Context)-1]); err != nil {
+		return fmt.Errorf("failed saving: %w", err)
 	}
 
 	return nil

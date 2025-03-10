@@ -1,0 +1,44 @@
+{
+   "updates":[
+      {
+         "ticket":"USD",
+         "quantity":100000,
+         "price":1,
+         "action":"SELL"
+      },
+      {
+         "ticket":"AAPL",
+         "quantity":125,
+         "price":239.07,
+         "action":"BUY"
+      },
+      {
+         "ticket":"AMZN",
+         "quantity":150,
+         "price":199.25,
+         "action":"BUY"
+      },
+      {
+         "ticket":"ARM",
+         "quantity":159,
+         "price":125.55,
+         "action":"BUY"
+      },
+      {
+         "ticket":"AMD",
+         "quantity":99,
+         "price":100.31,
+         "action":"BUY"
+      },
+      {
+         "ticket":"ALAB",
+         "quantity":149,
+         "price":66.92,
+         "action":"BUY"
+      }
+   ],
+   "context":[
+      "Initial holdings",
+      "Diversified into tech giants (AAPL, AMZN, ARM, AMD) for stability and growth, and allocated to Astera Labs (ALAB) for semiconductor innovation potential. Total allocation targets high-growth sectors with balanced risk."
+   ]
+}

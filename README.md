@@ -28,7 +28,7 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2025-03-01)
+## Current Portfolio (2025-03-08)
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|

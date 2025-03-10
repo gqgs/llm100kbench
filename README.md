@@ -17,6 +17,11 @@ To optimize their portfolio, the primary objective defined for the LLMs, it is i
 
 This benchmark may be a good proxy to measure how well LLMs are able to coordinate the aforementioned efforts.
 
+## Notes
+
+- Removed Gemini for now because the available free chat UI can't search for updated prices nor does it support the upload of CSV or JSON :grimacing:.
+- Removed Claude for now because the available free chat UI can't search for updated prices and its context window is too small for uploaded files :grimacing:.
+
 ## Project Structure
 
 - `cmd`: Contains the main command implementations

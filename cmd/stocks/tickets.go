@@ -20,7 +20,7 @@ type options struct {
 func main() {
 	opts := options{
 		url:    defaultURL,
-		output: filepath.Join("prices", time.Now().Format(time.DateOnly)+".json"),
+		output: filepath.Join("prices", time.Now().Format(time.DateOnly)+".csv"),
 	}
 	opts.MustParse()
 

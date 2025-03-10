@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	"encoding/csv"
 	"fmt"
 	"net/http"
 	"os"
@@ -21,10 +21,16 @@ func handler(opts options) error {
 		return fmt.Errorf("failed to decode tickers: %w", err)
 	}
 
-	encoded, err := json.MarshalIndent(stocks, "", " ")
+	file, err := os.Create(opts.output)
 	if err != nil {
-		return fmt.Errorf("failled to encode: %w", err)
+		return fmt.Errorf("failed to create file: %w", err)
 	}
 
-	return os.WriteFile(opts.output, encoded, os.ModePerm)
+	records := make([][]string, 0, len(stocks)+1)
+	records = append(records, []string{"ticket", "price"})
+	for _, stock := range stocks {
+		records = append(records, []string{stock.Symbol, stock.Lastsale})
+	}
+
+	return csv.NewWriter(file).WriteAll(records)
 }

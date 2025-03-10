@@ -39,13 +39,15 @@ The most recent prompt with the clear guidelines can be see [here](./cmd/create/
 |`deepseek`|`ALAB`|9971|149|
 |`deepseek`|`AMZN`|29887|150|
 |`deepseek`|`ARM`|19962|159|
-|`grok`|`ADBE`|29660|66|
-|`grok`|`AAPL`|49965|209|
-|`grok`|`ACGL`|19929|219|
+|`grok`|`COST`|6750|7|
+|`grok`|`TSLA`|26267|100|
+|`grok`|`AAPL`|23907|100|
+|`grok`|`AMZN`|19925|100|
+|`grok`|`NVDA`|22538|200|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
 |`chatgpt`|100000|—|
 |`deepseek`|99633|—|
-|`grok`|99554|—|
+|`grok`|99387|—|

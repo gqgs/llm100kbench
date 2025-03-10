@@ -7,26 +7,38 @@
       "action": "SELL"
     },
     {
+      "ticket": "NVDA",
+      "quantity": 200,
+      "price": 112.69,
+      "action": "BUY"
+    },
+    {
+      "ticket": "TSLA",
+      "quantity": 100,
+      "price": 262.67,
+      "action": "BUY"
+    },
+    {
       "ticket": "AAPL",
-      "quantity": 209,
+      "quantity": 100,
       "price": 239.07,
       "action": "BUY"
     },
     {
-      "ticket": "ADBE",
-      "quantity": 66,
-      "price": 449.40,
+      "ticket": "AMZN",
+      "quantity": 100,
+      "price": 199.25,
       "action": "BUY"
     },
     {
-      "ticket": "ACGL",
-      "quantity": 219,
-      "price": 91.00,
+      "ticket": "COST",
+      "quantity": 7,
+      "price": 964.31,
       "action": "BUY"
     }
   ],
   "context": [
     "Initial holdings",
-    "Allocated $100k across AAPL (50%), ADBE (30%), and ACGL (20%) on 2025-03-10. Focused on large-cap Tech (AAPL, ADBE) for growth and liquidity, and Finance (ACGL) for stability."
+    "Allocated $100k across NVDA, TSLA, AAPL, AMZN, and COST for diversification and growth potential based on March 10, 2025 prices."
   ]
 }

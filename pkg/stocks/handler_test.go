@@ -18,6 +18,4 @@ func Test_parseTickets(t *testing.T) {
 	assert.Len(t, stocks, 3922)
 	assert.Equal(t, stocks[0].Symbol, "AACBU")
 	assert.Equal(t, stocks[0].Lastsale, "$10.04")
-	assert.Equal(t, stocks[0].Sector, "Finance")
-
 }

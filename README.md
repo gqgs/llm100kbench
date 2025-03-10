@@ -11,8 +11,6 @@ This project provides a framework to create, manage, and track investment portfo
 
 The model executions and their current context can be seen [here](./orders).
 
-Note: Some models will just hallucinate prices if they have technicals issues accessing prices at the time of execution.
-
 ## Why?
 
 To optimize their portfolio, the primary objective defined for the LLMs, it is imperative to evaluate the risk-reward ratio, formulate cogent assumptions about future market conditions, and leverage tools and their understanding of human psychology and financial market dynamics.

@@ -35,8 +35,7 @@ Additional Details:
 
 - Execution constraints: the context cannot exceed the length of your context window.
 - Evaluation criteria: success is measured purely by the maximization of total portfolio value.
-- Make your decisions considering the market conditions at the exact time each iteration is being evaludated.
-- Search the internet if possible to find accurate prices for current market conditions.
+- You will be provided a file describing the current market conditions. Make your decisions based on the information described there.
 - Assume the value of USD is constant.
 - Your response should be in the STRICTLY defined JSON format defined above.
 - Be explicit about all the necessary operations (e.g. if you're selling a ticket to buy another you have explicitly describe both operations)

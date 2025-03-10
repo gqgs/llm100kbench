@@ -40,6 +40,7 @@ func handler(ctx context.Context, opts options) error {
 		fmt.Println(prompt)
 
 		fmt.Println("Your current portfolio:")
+		fmt.Println("```")
 	}
 
 	encoded, err := json.MarshalIndent(potfolio.New(holdings, contexts), "", " ")
@@ -48,6 +49,10 @@ func handler(ctx context.Context, opts options) error {
 	}
 
 	fmt.Println(string(encoded))
+
+	if opts.prompt {
+		fmt.Println("```")
+	}
 
 	return nil
 }

@@ -5,7 +5,6 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
-	"os"
 
 	"github.com/gqgs/llminvestbench/pkg/manager"
 	"github.com/gqgs/llminvestbench/pkg/potfolio"
@@ -34,5 +33,16 @@ func handler(ctx context.Context, opts options) error {
 		return fmt.Errorf("failed getting holdings: %w", err)
 	}
 
-	return json.NewEncoder(os.Stdout).Encode(potfolio.New(holdings, make([]string, 0)))
+	fmt.Println("Your current portfolio:")
+	fmt.Println("```")
+
+	encoded, err := json.MarshalIndent(potfolio.New(holdings, make([]string, 0)), "", " ")
+	if err != nil {
+		return fmt.Errorf("error marshaling file: %w", err)
+	}
+
+	fmt.Println(string(encoded))
+	fmt.Println("```")
+
+	return nil
 }

@@ -32,33 +32,20 @@ The most recent prompt with the clear guidelines can be see [here](./cmd/create/
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
-|`claude3.5`|`GOOGL`|2625|15|
-|`claude3.5`|`NVDA`|15500|20|
-|`claude3.5`|`AMZN`|3600|20|
-|`claude3.5`|`MSFT`|15800|40|
-|`claude3.5`|`VOO`|48750|125|
-|`deepseek-r1`|`AMD`|106250|625|
-|`gemini2.0-flash`|`NVDA`|99957|294|
-|`grok3`|`BRK.B`|20000|50|
-|`grok3`|`MFG`|8700|58|
-|`grok3`|`ENG`|8640|72|
-|`grok3`|`IWM`|15000|75|
-|`grok3`|`BTCETF`|5000|100|
-|`grok3`|`METL`|10000|100|
-|`grok3`|`BSV`|12480|156|
-|`grok3`|`INTC`|20000|400|
-|`o3-mini`|`TSLA`|10134|30|
-|`o3-mini`|`GOOGL`|8178|45|
-|`o3-mini`|`MSFT`|29799|73|
-|`o3-mini`|`AMZN`|19925|92|
-|`o3-mini`|`AAPL`|31649|129|
-|`o3-mini`|`USD`|313|313|
+|`chatgpt`|`USD`|69|69|
+|`chatgpt`|`AAPL`|99931|418|
+|`deepseek`|`AMD`|9930|99|
+|`deepseek`|`AAPL`|29883|125|
+|`deepseek`|`ALAB`|9971|149|
+|`deepseek`|`AMZN`|29887|150|
+|`deepseek`|`ARM`|19962|159|
+|`grok`|`ADBE`|29660|66|
+|`grok`|`AAPL`|49965|209|
+|`grok`|`ACGL`|19929|219|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek-r1`|106250|$${\color{green}6.25\\%}$$|
-|`o3-mini`|99998|—|
-|`gemini2.0-flash`|99957|—|
-|`grok3`|99820|$${\color{red}0.18\\%}$$|
-|`claude3.5`|86275|$${\color{red}13.72\\%}$$|
+|`chatgpt`|100000|—|
+|`deepseek`|99633|—|
+|`grok`|99554|—|

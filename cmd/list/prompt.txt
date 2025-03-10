@@ -56,7 +56,7 @@ Example Input:
             },
         ]
     },
-    "context": []
+    "context": ["Initial holdings"]
 }
 ```
 
@@ -78,6 +78,7 @@ Example Output:
     },
   ],
   "context": [
+    "Initial holdings",
     "Allocated $100k to TLSA because I believe there is a high probablility the market will react well for their upcoming report."
   ]
 }

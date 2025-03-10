@@ -36,7 +36,7 @@ func handler(ctx context.Context, opts options) error {
 	fmt.Println("Your current portfolio:")
 	fmt.Println("```")
 
-	encoded, err := json.MarshalIndent(potfolio.New(holdings, make([]string, 0)), "", " ")
+	encoded, err := json.MarshalIndent(potfolio.New(holdings, []string{"Initial holdings"}), "", " ")
 	if err != nil {
 		return fmt.Errorf("error marshaling file: %w", err)
 	}

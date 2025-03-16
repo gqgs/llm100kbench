@@ -9,13 +9,13 @@ import (
 )
 
 func Test_parseTickets(t *testing.T) {
-	file, err := os.Open("./testdata/nasdaq_full_tickers.json")
+	file, err := os.Open("./testdata/nasdaq_response.json")
 	require.NoError(t, err)
 	defer file.Close()
 
-	stocks, err := DecodeTickers(file)
+	stocks, err := DecodeNasdaqResponse(file)
 	require.NoError(t, err)
-	assert.Len(t, stocks, 3922)
+	assert.Len(t, stocks, 3867)
 	assert.Equal(t, stocks[0].Symbol, "AACBU")
-	assert.Equal(t, stocks[0].Lastsale, "$10.04")
+	assert.Equal(t, stocks[0].Lastsale, "$10.06")
 }

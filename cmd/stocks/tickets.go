@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	defaultURL = "https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/refs/heads/main/nasdaq/nasdaq_full_tickers.json"
+	defaultURL = "https://api.nasdaq.com/api/screener/stocks"
 )
 
 //go:generate go tool argsgen

@@ -12,7 +12,14 @@ type Stock struct {
 	Lastsale string `json:"lastsale"`
 }
 
-func DecodeTickers(reader io.Reader) (Stocks, error) {
-	var stocks Stocks
-	return stocks, json.NewDecoder(reader).Decode(&stocks)
+type Data struct {
+	Rows Stocks `json:"rows"`
+}
+type NasdaqResponse struct {
+	Data Data `json:"data"`
+}
+
+func DecodeNasdaqResponse(reader io.Reader) (Stocks, error) {
+	var response NasdaqResponse
+	return response.Data.Rows, json.NewDecoder(reader).Decode(&response)
 }

@@ -1,0 +1,26 @@
+{
+  "updates": [
+    {
+      "ticket": "TSLA",
+      "quantity": 100,
+      "price": 249.98,
+      "action": "SELL"
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 100,
+      "price": 213.49,
+      "action": "SELL"
+    },
+    {
+      "ticket": "NVDA",
+      "quantity": 381,
+      "price": 121.67,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Allocated $100k across NVDA, TSLA, AAPL, AMZN, and COST for diversification and growth potential based on March 10, 2025 prices.",
+    "Sold TSLA and AAPL to buy more NVDA due to its strong AI growth potential."
+  ]
+}

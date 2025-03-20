@@ -33,26 +33,24 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2025-03-08)
+## Current Portfolio (2025-03-16)
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
 |`chatgpt`|`AAPL`|99931|418|
+|`deepseek`|`AVGO`|10754|55|
 |`deepseek`|`AMD`|9930|99|
 |`deepseek`|`AAPL`|29883|125|
-|`deepseek`|`ALAB`|9971|149|
 |`deepseek`|`AMZN`|29887|150|
 |`deepseek`|`ARM`|19962|159|
 |`grok`|`COST`|6750|7|
-|`grok`|`TSLA`|26267|100|
-|`grok`|`AAPL`|23907|100|
 |`grok`|`AMZN`|19925|100|
-|`grok`|`NVDA`|22538|200|
+|`grok`|`NVDA`|68894|581|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
+|`deepseek`|100416|+0.42%|
 |`chatgpt`|100000|—|
-|`deepseek`|99633|—|
-|`grok`|99387|—|
+|`grok`|95569|-4.43%|

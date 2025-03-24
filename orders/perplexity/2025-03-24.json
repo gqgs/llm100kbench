@@ -1,0 +1,80 @@
+{
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 99990,
+      "price": 1,
+      "action": "SELL"
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 46,
+      "price": 214.10,
+      "action": "BUY"
+    },
+    {
+      "ticket": "AMZN",
+      "quantity": 51,
+      "price": 194.95,
+      "action": "BUY"
+    },
+    {
+      "ticket": "CRWD",
+      "quantity": 27,
+      "price": 369.03,
+      "action": "BUY"
+    },
+    {
+      "ticket": "DDOG",
+      "quantity": 96,
+      "price": 103.17,
+      "action": "BUY"
+    },
+    {
+      "ticket": "COST",
+      "quantity": 11,
+      "price": 895.40,
+      "action": "BUY"
+    },
+    {
+      "ticket": "DUOL",
+      "quantity": 32,
+      "price": 306.17,
+      "action": "BUY"
+    },
+    {
+      "ticket": "AMGN",
+      "quantity": 31,
+      "price": 315.04,
+      "action": "BUY"
+    },
+    {
+      "ticket": "AXON",
+      "quantity": 17,
+      "price": 558.41,
+      "action": "BUY"
+    },
+    {
+      "ticket": "COIN",
+      "quantity": 52,
+      "price": 190.38,
+      "action": "BUY"
+    },
+    {
+      "ticket": "CTAS",
+      "quantity": 51,
+      "price": 194.46,
+      "action": "BUY"
+    },
+    {
+      "ticket": "AMD",
+      "quantity": 15,
+      "price": 107.14,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Initial holdings",
+    "Created a diversified portfolio across technology (AAPL, AMZN, CRWD, DDOG, AMD), consumer goods (COST, DUOL), healthcare (AMGN, AXON), financial services (COIN), and industrial sectors (CTAS). Selected companies with strong market positions and growth potential."
+  ]
+}

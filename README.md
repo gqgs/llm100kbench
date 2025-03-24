@@ -21,7 +21,7 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 - Removed Gemini for now because the available free chat UI can't search for updated prices nor does it support the upload of CSV or JSON :grimacing:.
 - Removed Claude for now because the available free chat UI can't search for updated prices and its context window is too small for uploaded files :grimacing:.
-- Removed ChatGPT for now becaue the available free chat UI can't no longer do complex data analysis.
+- Removed ChatGPT for now becaue the available free chat UI can't no longer do complex data analysis :grimacing:.
 
 ## Project Structure
 

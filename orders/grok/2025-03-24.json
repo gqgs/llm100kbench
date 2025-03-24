@@ -1,0 +1,26 @@
+{
+  "updates": [
+    {
+      "ticket": "COST",
+      "quantity": 7,
+      "price": 895.40,
+      "action": "SELL"
+    },
+    {
+      "ticket": "AMZN",
+      "quantity": 31,
+      "price": 194.95,
+      "action": "BUY"
+    },
+    {
+      "ticket": "NVDA",
+      "quantity": 2,
+      "price": 107.14,
+      "action": "BUY"
+    }
+  ],
+  "context": [
+    "Sold TSLA and AAPL to buy more NVDA due to its strong AI growth potential.",
+    "Reallocated funds from COST to increase holdings in AMZN and NVDA for their stronger growth potential in AI and e-commerce sectors."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+    "updates": [
+      {
+        "ticket": "ARM",
+        "quantity": 159,
+        "price": 119.07,
+        "action": "SELL"
+      },
+      {
+        "ticket": "NVDA",
+        "quantity": 159,
+        "price": 118.53,
+        "action": "BUY"
+      }
+    ],
+    "context": [
+      "Reallocated ALAB holdings to Broadcom (AVGO) to capitalize on its leadership in semiconductor solutions and higher growth trajectory, enhancing sector focus.",
+      "Sold ARM holdings to reallocate into NVIDIA (NVDA) due to strong positioning in AI and GPU markets, expecting higher growth potential."
+    ]
+  }
+  

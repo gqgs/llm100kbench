@@ -1,0 +1,62 @@
+{
+    "updates": [
+      {
+        "ticket": "AVGO",
+        "quantity": 55,
+        "price": 154.01,
+        "action": "SELL"
+      },
+      {
+        "ticket": "AMD",
+        "quantity": 99,
+        "price": 93.80,
+        "action": "SELL"
+      },
+      {
+        "ticket": "AAPL",
+        "quantity": 125,
+        "price": 203.19,
+        "action": "SELL"
+      },
+      {
+        "ticket": "AMZN",
+        "quantity": 150,
+        "price": 178.41,
+        "action": "SELL"
+      },
+      {
+        "ticket": "NVDA",
+        "quantity": 159,
+        "price": 101.80,
+        "action": "SELL"
+      },
+      {
+        "ticket": "ASML",
+        "quantity": 100,
+        "price": 623.22,
+        "action": "BUY"
+      },
+      {
+        "ticket": "SNPS",
+        "quantity": 50,
+        "price": 417.76,
+        "action": "BUY"
+      },
+      {
+        "ticket": "MSFT",
+        "quantity": 7,
+        "price": 373.11,
+        "action": "BUY"
+      },
+      {
+        "ticket": "AMD",
+        "quantity": 3,
+        "price": 93.80,
+        "action": "BUY"
+      }
+    ],
+    "context": [
+      "Sold ARM holdings to reallocate into NVIDIA (NVDA) due to strong positioning in AI and GPU markets, expecting higher growth potential.",
+      "Reallocated entire portfolio to semiconductor leaders ASML and SNPS, and added MSFT for cloud/AI exposure. Sold underperforming tech stocks to focus on high-growth sectors."
+    ]
+  }

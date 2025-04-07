@@ -1,0 +1,38 @@
+{
+    "updates": [
+      {
+        "ticket": "AMZN",
+        "quantity": 50,
+        "price": 178.41,
+        "action": "SELL"
+      },
+      {
+        "ticket": "NVDA",
+        "quantity": 200,
+        "price": 101.80,
+        "action": "SELL"
+      },
+      {
+        "ticket": "AAPL",
+        "quantity": 48,
+        "price": 203.19,
+        "action": "BUY"
+      },
+      {
+        "ticket": "MSFT",
+        "quantity": 26,
+        "price": 373.11,
+        "action": "BUY"
+      },
+      {
+        "ticket": "GOOGL",
+        "quantity": 64,
+        "price": 150.72,
+        "action": "BUY"
+      }
+    ],
+    "context": [
+      "Reallocated funds from COST to increase holdings in AMZN and NVDA for their stronger growth potential in AI and e-commerce sectors.",
+      "Diversified portfolio by selling some AMZN and NVDA to buy AAPL, MSFT, and GOOGL, aiming to reduce risk and capture growth in multiple tech leaders."
+    ]
+  }

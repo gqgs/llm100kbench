@@ -35,35 +35,35 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2025-03-24)
+## Current Portfolio (2025-04-07)
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
-|`deepseek`|`AVGO`|10754|55|
-|`deepseek`|`AMD`|9930|99|
-|`deepseek`|`AAPL`|29883|125|
-|`deepseek`|`AMZN`|29887|150|
-|`deepseek`|`NVDA`|18846|159|
-|`grok`|`AMZN`|25968|131|
-|`grok`|`NVDA`|69108|583|
+|`chatgpt`|`USD`|69|69|
+|`chatgpt`|`AAPL`|99931|418|
+|`deepseek`|`AMD`|925|3|
+|`deepseek`|`MSFT`|2611|7|
+|`deepseek`|`SNPS`|20888|50|
+|`deepseek`|`ASML`|62322|100|
+|`grok`|`MSFT`|9700|26|
+|`grok`|`AAPL`|9753|48|
+|`grok`|`GOOGL`|9646|64|
+|`grok`|`AMZN`|17047|81|
+|`grok`|`NVDA`|48748|383|
 |`perplexity`|`USD`|10|10|
-|`perplexity`|`COST`|9849|11|
-|`perplexity`|`AMD`|1607|15|
 |`perplexity`|`AXON`|9492|17|
 |`perplexity`|`CRWD`|9963|27|
 |`perplexity`|`AMGN`|9766|31|
-|`perplexity`|`DUOL`|9797|32|
-|`perplexity`|`AAPL`|9848|46|
-|`perplexity`|`AMZN`|9942|51|
+|`perplexity`|`COST`|47565|50|
 |`perplexity`|`CTAS`|9917|51|
-|`perplexity`|`COIN`|9899|52|
-|`perplexity`|`DDOG`|9904|96|
+|`perplexity`|`DUOL`|20470|66|
 
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`perplexity`|99994|—|
-|`deepseek`|99300|-0.70%|
-|`grok`|95076|-4.92%|
+|`perplexity`|107183|—|
+|`chatgpt`|100000|—|
+|`grok`|94894|—|
+|`deepseek`|86746|—|
 

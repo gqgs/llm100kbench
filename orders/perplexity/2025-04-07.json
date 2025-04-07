@@ -1,0 +1,51 @@
+{
+    "updates": [
+      {
+        "ticket": "AMD",
+        "quantity": 15,
+        "price": 93.80,
+        "action": "SELL"
+      },
+      {
+        "ticket": "AAPL",
+        "quantity": 46,
+        "price": 203.19,
+        "action": "SELL"
+      },
+      {
+        "ticket": "AMZN",
+        "quantity": 51,
+        "price": 178.41,
+        "action": "SELL"
+      },
+      {
+        "ticket": "COIN",
+        "quantity": 52,
+        "price": 170.76,
+        "action": "SELL"
+      },
+      {
+        "ticket": "DDOG",
+        "quantity": 96,
+        "price": 94.47,
+        "action": "SELL"
+      },
+      {
+        "ticket": "COST",
+        "quantity": 39,
+        "price": 967.08,
+        "action": "BUY"
+      },
+      {
+        "ticket": "DUOL",
+        "quantity": 34,
+        "price": 313.90,
+        "action": "BUY"
+      }
+    ],
+    "context": [
+      "Created a diversified portfolio across technology (AAPL, AMZN, CRWD, DDOG, AMD), consumer goods (COST, DUOL), healthcare (AMGN, AXON), financial services (COIN), and industrial sectors (CTAS). Selected companies with strong market positions and growth potential.",
+      "Rebalanced portfolio by divesting underperforming tech stocks (AMD, AAPL, AMZN, COIN, DDOG) to consolidate positions in high-growth consumer/tech leaders (COST, DUOL) with strong price momentum and profit margins."
+    ]
+  }
+  

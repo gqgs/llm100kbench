@@ -1,0 +1,47 @@
+name: Weekly LLM Investment Benchmark
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 8 * * 1"
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Test before run
+        run: go test ./...
+
+      - name: Run weekly benchmark
+        run: go run ./cmd/run
+
+      - name: Test after run
+        run: go test ./...
+
+      - name: Commit benchmark updates
+        run: |
+          if git diff --quiet; then
+            echo "No benchmark updates to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add orders prices stats README.md llm100kbench.db
+          git commit -m "Update weekly LLM benchmark"
+          git push

@@ -36,7 +36,7 @@ func New(db DB) *repository {
 }
 
 func (r *repository) CreateHolding(ctx context.Context, model, ticket string, sum, quantity float64) error {
-	_, err := r.db.ExecContext(ctx, "INSERT INTO holdings (model, ticket, sum, quantity) VALUES (?, ?, ?, ?)", model, ticket, sum, quantity)
+	_, err := r.db.ExecContext(ctx, "INSERT OR IGNORE INTO holdings (model, ticket, sum, quantity) VALUES (?, ?, ?, ?)", model, ticket, sum, quantity)
 	return err
 }
 
@@ -75,12 +75,15 @@ func (r *repository) SaveHoldings(ctx context.Context, model string, holdings ho
 }
 
 func (r *repository) SaveContext(ctx context.Context, model, context string) error {
+	if _, err := r.db.ExecContext(ctx, "INSERT INTO context_history (model, context, created_at, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)", model, context); err != nil {
+		return err
+	}
 	_, err := r.db.ExecContext(ctx, "INSERT INTO context (model, context, created_at, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) ON CONFLICT(model) DO UPDATE SET context = ?, updated_at = CURRENT_TIMESTAMP WHERE model = ?", model, context, context, model)
 	return err
 }
 
 func (r *repository) GetRecentContext(ctx context.Context, model string, limit int) ([]string, error) {
-	rows, err := r.db.QueryContext(ctx, "SELECT context FROM context WHERE model = ? ORDER BY created_at DESC LIMIT ?", model, limit)
+	rows, err := r.db.QueryContext(ctx, "SELECT context FROM context_history WHERE model = ? ORDER BY created_at DESC, id DESC LIMIT ?", model, limit)
 	if err != nil {
 		return nil, err
 	}
@@ -96,6 +99,15 @@ func (r *repository) GetRecentContext(ctx context.Context, model string, limit i
 	}
 	if err := rows.Err(); err != nil {
 		return nil, err
+	}
+	if len(contexts) == 0 {
+		row := r.db.QueryRowContext(ctx, "SELECT context FROM context WHERE model = ?", model)
+		var context string
+		if err := row.Scan(&context); err == nil {
+			contexts = append(contexts, context)
+		} else if err != sql.ErrNoRows {
+			return nil, err
+		}
 	}
 	return contexts, nil
 }

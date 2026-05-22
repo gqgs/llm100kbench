@@ -11,6 +11,12 @@ This project provides a framework to create, manage, and track investment portfo
 
 The model executions and their current context can be seen [here](./orders).
 
+## Automated Weekly Runs
+
+The active model roster is configured in [models.json](./models.json). The weekly GitHub Actions workflow runs the benchmark every Monday, writes model orders under `orders/<model>/<date>.json`, stores the market snapshot in `prices/<date>.csv`, updates `llm100kbench.db`, and regenerates this README's current portfolio section.
+
+The project is intentionally limited to free API tiers. Models that require paid metered API access or subscriptions are archived instead of being run automatically.
+
 ## Why?
 
 To optimize their portfolio, the primary objective defined for the LLMs, it is imperative to evaluate the risk-reward ratio, formulate cogent assumptions about future market conditions, and leverage tools and their understanding of human psychology and financial market dynamics.
@@ -19,9 +25,9 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 ## Notes
 
-- Removed __Gemini__ for now because the available free chat UI can't search for updated prices nor does it support the upload of CSV or JSON :grimacing:.
-- Removed __Claude__ for now because the available free chat UI can't search for updated prices and its context window is too small for uploaded files :grimacing:.
-- Removed __ChatGPT__ for now becaue the available free chat UI can't no longer do complex data analysis :grimacing:.
+- `chatgpt`, `deepseek`, and `grok` are kept as continuing benchmark identities. Their exact backend model IDs are recorded in each new order's metadata.
+- `perplexity` is archived for future runs because its API is paid and the free chat UI is not suitable for unattended automation.
+- Claude and other paid-only APIs are not included while the project keeps the free-tier-only restriction.
 
 ## Project Structure
 
@@ -66,4 +72,3 @@ The most recent prompt with the clear guidelines can be see [here](./cmd/create/
 |`chatgpt`|100000|—|
 |`grok`|94894|—|
 |`deepseek`|86746|—|
-

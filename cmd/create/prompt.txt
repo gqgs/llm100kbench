@@ -1,4 +1,4 @@
-You have $100,000 to invest in any publicly tradable assets.
+You have $100,000 to invest in publicly tradable assets from the provided market table.
 
 Let's define the following types:
 type (
@@ -6,7 +6,7 @@ type (
         ticket: String
         sum: Integer // cumulative sum
         quantity: Integer // cumulative quantity
-        creadted_at: DateTime
+        created_at: DateTime
         updated_at: DateTime
     }
     Context: string
@@ -36,11 +36,16 @@ Additional Details:
 - Execution constraints: the context cannot exceed the length of your context window.
 - Evaluation criteria: success is measured purely by the maximization of total portfolio value.
 - You will be provided a file describing the current market conditions. Make your decisions based on the information described there.
+- You may trade only USD or tickets present in the provided market table.
+- Prices in your response must match the provided market prices. USD is always price 1.
+- Quantities must be positive integers.
+- Do not sell more shares than are currently held.
+- Do not spend more USD than is available from current cash plus sells in the same order.
 - Assume the value of USD is constant.
 - Your response should be in the STRICTLY defined JSON format defined above.
+- Return only JSON. Do not wrap your answer in markdown fences.
 - Be explicit about all the necessary operations (e.g. if you're selling a ticket to buy another you have explicitly describe both operations)
 - You are allowed to use any tools that are available to you.
-- The net change of your operation should always be equal to zero.
 
 Example Input:
 ```

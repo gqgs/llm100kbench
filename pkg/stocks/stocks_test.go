@@ -18,4 +18,11 @@ func Test_parseTickets(t *testing.T) {
 	assert.Len(t, stocks, 3867)
 	assert.Equal(t, stocks[0].Symbol, "AACBU")
 	assert.Equal(t, stocks[0].Lastsale, "$10.06")
+	assert.Equal(t, stocks[0].Sector, "Finance")
+}
+
+func TestCleanPrice(t *testing.T) {
+	price, err := CleanPrice("$1,234.56")
+	require.NoError(t, err)
+	assert.Equal(t, 1234.56, price)
 }

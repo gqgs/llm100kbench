@@ -1,0 +1,68 @@
+{
+  "models": [
+    {
+      "alias": "chatgpt",
+      "provider": "github",
+      "model": "openai/gpt-4.1",
+      "enabled": true,
+      "env": "GITHUB_TOKEN"
+    },
+    {
+      "alias": "deepseek",
+      "provider": "github",
+      "model": "deepseek/deepseek-r1-0528",
+      "enabled": true,
+      "env": "GITHUB_TOKEN"
+    },
+    {
+      "alias": "grok",
+      "provider": "github",
+      "model": "xai/grok-3",
+      "enabled": true,
+      "env": "GITHUB_TOKEN"
+    },
+    {
+      "alias": "gemini",
+      "provider": "gemini",
+      "model": "gemini-2.5-flash-lite",
+      "enabled": true,
+      "env": "GEMINI_API_KEY"
+    },
+    {
+      "alias": "mistral",
+      "provider": "mistral",
+      "model": "mistral-small-2603",
+      "enabled": true,
+      "env": "MISTRAL_API_KEY"
+    },
+    {
+      "alias": "llama",
+      "provider": "groq",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "enabled": true,
+      "env": "GROQ_API_KEY"
+    },
+    {
+      "alias": "gpt-oss",
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "enabled": true,
+      "env": "GROQ_API_KEY"
+    },
+    {
+      "alias": "qwen",
+      "provider": "groq",
+      "model": "qwen/qwen3-32b",
+      "enabled": true,
+      "env": "GROQ_API_KEY"
+    },
+    {
+      "alias": "perplexity",
+      "provider": "perplexity",
+      "model": "sonar",
+      "enabled": false,
+      "archived": true,
+      "reason": "Perplexity API is paid and the free chat UI is not suitable for unattended weekly automation."
+    }
+  ]
+}

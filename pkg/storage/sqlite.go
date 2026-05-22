@@ -32,6 +32,18 @@ func NewSqlite(dbPath string) (*sqliteStorage, error) {
 		return nil, err
 	}
 
+	if _, err := db.Exec(`
+		CREATE TABLE IF NOT EXISTS context_history (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			model TEXT,
+			context TEXT,
+			updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+			created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+		)
+	`); err != nil {
+		return nil, err
+	}
+
 	if _, err = db.Exec(`
 		CREATE TABLE IF NOT EXISTS holdings (
 			model TEXT,
@@ -51,6 +63,7 @@ func NewSqlite(dbPath string) (*sqliteStorage, error) {
 		"CREATE INDEX IF NOT EXISTS idx_model on holdings(model)",
 		"CREATE INDEX IF NOT EXISTS idx_model_quantity on holdings(model, quantity)",
 		"CREATE INDEX IF NOT EXISTS idx_positions on holdings(model, ticket, quantity)",
+		"CREATE INDEX IF NOT EXISTS idx_context_history_model_created on context_history(model, created_at)",
 	} {
 		if _, err := db.Exec(index); err != nil {
 			return nil, err

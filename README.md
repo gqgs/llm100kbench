@@ -41,34 +41,35 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2025-04-07)
+## Current Portfolio (2026-05-22)
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
-|`chatgpt`|`AAPL`|99931|418|
-|`deepseek`|`AMD`|925|3|
-|`deepseek`|`MSFT`|2611|7|
-|`deepseek`|`SNPS`|20888|50|
-|`deepseek`|`ASML`|62322|100|
-|`grok`|`MSFT`|9700|26|
-|`grok`|`AAPL`|9753|48|
-|`grok`|`GOOGL`|9646|64|
-|`grok`|`AMZN`|17047|81|
-|`grok`|`NVDA`|48748|383|
-|`perplexity`|`USD`|10|10|
-|`perplexity`|`AXON`|9492|17|
-|`perplexity`|`CRWD`|9963|27|
-|`perplexity`|`AMGN`|9766|31|
-|`perplexity`|`COST`|47565|50|
-|`perplexity`|`CTAS`|9917|51|
-|`perplexity`|`DUOL`|20470|66|
-
+|`chatgpt`|`AAPL`|127486|418|
+|`deepseek`|`AMD`|1349|3|
+|`deepseek`|`ASML`|159200|100|
+|`deepseek`|`MSFT`|2934|7|
+|`deepseek`|`SNPS`|25199|50|
+|`grok`|`AAPL`|14640|48|
+|`grok`|`AMZN`|21745|81|
+|`grok`|`GOOGL`|24810|64|
+|`grok`|`MSFT`|10896|26|
+|`grok`|`NVDA`|84072|383|
+|`gemini`|`USD`|100000|100000|
+|`mistral`|`USD`|100000|100000|
+|`llama`|`USD`|100000|100000|
+|`gpt-oss`|`USD`|100000|100000|
+|`qwen`|`USD`|100000|100000|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`perplexity`|107183|—|
-|`chatgpt`|100000|—|
-|`grok`|94894|—|
-|`deepseek`|86746|—|
+|`deepseek`|188681|—|
+|`grok`|156164|—|
+|`chatgpt`|127555|—|
+|`gemini`|100000|—|
+|`mistral`|100000|—|
+|`llama`|100000|—|
+|`gpt-oss`|100000|—|
+|`qwen`|100000|—|

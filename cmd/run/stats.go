@@ -24,9 +24,9 @@ func writeStats(ctx context.Context, svc service.Service, cfg *modelconfig.Confi
 		return err
 	}
 
-	var builder strings.Builder
-	builder.WriteString("| Model | Ticket | Sum | Quantity |\n")
-	builder.WriteString("|-------|-------|-------|--------|\n")
+	var holdingsTable strings.Builder
+	holdingsTable.WriteString("| Model | Ticket | Sum | Quantity |\n")
+	holdingsTable.WriteString("|-------|-------|-------|--------|\n")
 
 	totals := []modelTotal{}
 	for _, model := range cfg.EnabledModels() {
@@ -38,23 +38,38 @@ func writeStats(ctx context.Context, svc service.Service, cfg *modelconfig.Confi
 		sortHoldings(holdings)
 		var total float64
 		for _, h := range holdings {
-			builder.WriteString(fmt.Sprintf("|`%s`|`%s`|%.0f|%d|\n", model.Alias, h.Ticket, h.Sum, h.Quantity))
+			holdingsTable.WriteString(fmt.Sprintf("|`%s`|`%s`|%.0f|%d|\n", model.Alias, h.Ticket, h.Sum, h.Quantity))
 			total += h.Sum
 		}
 		totals = append(totals, modelTotal{Alias: model.Alias, Total: total})
 	}
 
-	builder.WriteString("\n\n")
-	builder.WriteString("| Model | Total Sum | Change |\n")
-	builder.WriteString("|-------|-----------|--------|\n")
 	sort.SliceStable(totals, func(i, j int) bool {
 		return totals[i].Total > totals[j].Total
 	})
+
+	var builder strings.Builder
+	builder.WriteString("### Portfolio Value by Model\n\n")
+	writeTotalsChart(&builder, totals)
+	builder.WriteString("\n\n")
+	builder.WriteString(holdingsTable.String())
+	builder.WriteString("\n\n")
+	builder.WriteString("| Model | Total Sum | Change |\n")
+	builder.WriteString("|-------|-----------|--------|\n")
 	for _, total := range totals {
 		builder.WriteString(fmt.Sprintf("|`%s`|%.0f|—|\n", total.Alias, total.Total))
 	}
 
 	return os.WriteFile(filepath.Join("stats", date+".md"), []byte(builder.String()), 0o644)
+}
+
+func writeTotalsChart(builder *strings.Builder, totals []modelTotal) {
+	builder.WriteString("```mermaid\n")
+	builder.WriteString("pie showData\n")
+	for _, total := range totals {
+		builder.WriteString(fmt.Sprintf("    \"%s\" : %.0f\n", total.Alias, total.Total))
+	}
+	builder.WriteString("```")
 }
 
 func sortHoldings(holdings holding.Holdings) {

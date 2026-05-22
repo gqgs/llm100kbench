@@ -37,8 +37,8 @@ You will receive current holdings, recent context, and a bounded market table. Y
 Return strictly valid JSON with this exact shape:
 {
   "updates": [
-    {"ticket": "USD", "quantity": 1000, "price": 1, "action": "SELL"},
-    {"ticket": "AAPL", "quantity": 5, "price": 200.12, "action": "BUY"}
+    {"ticket": "USD", "quantity": 1000, "price": 1, "action": "SELL", "reason": "Free cash for the target allocation."},
+    {"ticket": "AAPL", "quantity": 5, "price": 200.12, "action": "BUY", "reason": "Concise investment rationale for this specific trade."}
   ],
   "context": ["short note useful for the next run"]
 }
@@ -47,6 +47,7 @@ Rules:
 - Use action "BUY" or "SELL".
 - Quantity must be a positive integer.
 - Price must match the supplied market price, except USD which is always 1.
+- Every update must include a concise reason explaining that specific operation. Do not include hidden reasoning or step-by-step analysis.
 - Do not sell more shares than currently held.
 - Do not spend more USD than available from current cash plus sells.
 - If no trade is justified, return {"updates":[],"context":["reason for holding"]}.

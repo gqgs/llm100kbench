@@ -59,6 +59,10 @@ func validateOrder(parsed *order.Order, holdings holding.Holdings, priceMap map[
 		if update.Quantity <= 0 {
 			return fmt.Errorf("%w: %s quantity must be positive", errInvalidOrder, update.Ticket)
 		}
+		update.Reason = strings.TrimSpace(update.Reason)
+		if update.Reason == "" {
+			return fmt.Errorf("%w: %s update must include a reason", errInvalidOrder, update.Ticket)
+		}
 		if _, ok := tickers[update.Ticket]; !ok {
 			return fmt.Errorf("%w: %s is not in the market table", errInvalidOrder, update.Ticket)
 		}

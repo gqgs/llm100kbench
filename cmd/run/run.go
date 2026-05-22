@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/gqgs/llminvestbench/pkg/holding"
@@ -127,6 +128,9 @@ func runModel(ctx context.Context, svc service.Service, model modelconfig.Model,
 	if err := writeOrder(orderPath(model.Alias, opts.date), parsed); err != nil {
 		return err
 	}
+	if err := writeDecisionLog(logPath(model.Alias, opts.date), parsed); err != nil {
+		return err
+	}
 
 	if err := holdings.ProcessOrder(parsed); err != nil {
 		return err
@@ -190,6 +194,53 @@ func writeOrder(path string, parsed *order.Order) error {
 	encoder := json.NewEncoder(file)
 	encoder.SetIndent("", "  ")
 	return encoder.Encode(parsed)
+}
+
+func writeDecisionLog(path string, parsed *order.Order) error {
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
+
+	var builder strings.Builder
+	builder.WriteString("# Model Decision Log\n\n")
+	if parsed.Metadata != nil {
+		builder.WriteString(fmt.Sprintf("- Alias: `%s`\n", parsed.Metadata.Alias))
+		builder.WriteString(fmt.Sprintf("- Provider: `%s`\n", parsed.Metadata.Provider))
+		builder.WriteString(fmt.Sprintf("- Model: `%s`\n", parsed.Metadata.Model))
+		builder.WriteString(fmt.Sprintf("- Status: `%s`\n", parsed.Metadata.Status))
+		builder.WriteString(fmt.Sprintf("- Generated at: `%s`\n", parsed.Metadata.GeneratedAt))
+	}
+
+	builder.WriteString("\n## Updates\n\n")
+	if len(parsed.Updates) == 0 {
+		builder.WriteString("No trades executed.\n")
+	} else {
+		builder.WriteString("| Action | Ticket | Quantity | Price | Reason |\n")
+		builder.WriteString("|--------|--------|----------|-------|--------|\n")
+		for _, update := range parsed.Updates {
+			builder.WriteString(fmt.Sprintf("|`%s`|`%s`|%d|%.4f|%s|\n", update.Action, update.Ticket, update.Quantity, update.Price, markdownCell(update.Reason)))
+		}
+	}
+
+	builder.WriteString("\n## Context\n\n")
+	for _, context := range parsed.Context {
+		builder.WriteString("- " + context + "\n")
+	}
+
+	if parsed.Metadata != nil && len(parsed.Metadata.Notes) > 0 {
+		builder.WriteString("\n## Validation Notes\n\n")
+		for _, note := range parsed.Metadata.Notes {
+			builder.WriteString("- " + note + "\n")
+		}
+	}
+
+	return os.WriteFile(path, []byte(builder.String()), 0o644)
+}
+
+func markdownCell(value string) string {
+	value = strings.ReplaceAll(value, "\n", " ")
+	value = strings.ReplaceAll(value, "|", "\\|")
+	return strings.TrimSpace(value)
 }
 
 func buildPriceMap(rows stocks.Stocks) map[string]float64 {

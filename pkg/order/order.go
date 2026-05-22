@@ -10,6 +10,7 @@ type Update struct {
 	Quantity int     `json:"quantity"`
 	Price    float64 `json:"price"`
 	Action   string  `json:"action"`
+	Reason   string  `json:"reason,omitempty"`
 }
 
 type Order struct {

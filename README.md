@@ -17,6 +17,8 @@ The active model roster is configured in [models.json](./models.json). The weekl
 
 The project is intentionally limited to free API tiers. Models that require paid metered API access or subscriptions are archived instead of being run automatically.
 
+Each weekly run also writes a concise decision log under `logs/<model>/<date>.md`, including the model used, validation status, per-trade rationale, context, and validation notes when a model response is rejected.
+
 ## Why?
 
 To optimize their portfolio, the primary objective defined for the LLMs, it is imperative to evaluate the risk-reward ratio, formulate cogent assumptions about future market conditions, and leverage tools and their understanding of human psychology and financial market dynamics.

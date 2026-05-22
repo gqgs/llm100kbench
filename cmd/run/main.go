@@ -24,7 +24,7 @@ func main() {
 	flag.StringVar(&opts.models, "models", "models.json", "model config file")
 	flag.StringVar(&opts.pricesURL, "prices-url", defaultURL, "url to get prices from")
 	flag.StringVar(&opts.date, "date", time.Now().Format(time.DateOnly), "run date")
-	flag.IntVar(&opts.maxSymbols, "max-symbols", 120, "maximum market symbols to include in prompts")
+	flag.IntVar(&opts.maxSymbols, "max-symbols", 40, "maximum market symbols to include in prompts")
 	flag.Parse()
 
 	if err := run(context.Background(), opts); err != nil {
@@ -38,4 +38,8 @@ func pricePath(date string) string {
 
 func orderPath(alias, date string) string {
 	return filepath.Join("orders", alias, date+".json")
+}
+
+func logPath(alias, date string) string {
+	return filepath.Join("logs", alias, date+".md")
 }

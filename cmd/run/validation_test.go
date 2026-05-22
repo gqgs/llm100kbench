@@ -37,7 +37,7 @@ func TestValidateOrderRejectsOverspend(t *testing.T) {
 	holdings := holding.Holdings{{Ticket: "USD", Sum: 100, Quantity: 100}}
 	universe := stocks.Stocks{{Symbol: "AAPL", Lastsale: "$50.00"}}
 	err := validateOrder(&order.Order{
-		Updates: []*order.Update{{Ticket: "AAPL", Quantity: 3, Price: 50, Action: "BUY"}},
+		Updates: []*order.Update{{Ticket: "AAPL", Quantity: 3, Price: 50, Action: "BUY", Reason: "Increase exposure."}},
 		Context: []string{"buy"},
 	}, holdings, map[string]float64{"USD": 1, "AAPL": 50}, universe)
 
@@ -56,13 +56,25 @@ func TestValidateOrderAcceptsSellThenBuy(t *testing.T) {
 	}
 	err := validateOrder(&order.Order{
 		Updates: []*order.Update{
-			{Ticket: "MSFT", Quantity: 1, Price: 100, Action: "SELL"},
-			{Ticket: "AAPL", Quantity: 2, Price: 50, Action: "BUY"},
+			{Ticket: "MSFT", Quantity: 1, Price: 100, Action: "SELL", Reason: "Fund new allocation."},
+			{Ticket: "AAPL", Quantity: 2, Price: 50, Action: "BUY", Reason: "Reallocate into Apple."},
 		},
 		Context: []string{"rebalance"},
 	}, holdings, map[string]float64{"USD": 1, "MSFT": 100, "AAPL": 50}, universe)
 
 	require.NoError(t, err)
+}
+
+func TestValidateOrderRequiresReason(t *testing.T) {
+	holdings := holding.Holdings{{Ticket: "USD", Sum: 100, Quantity: 100}}
+	universe := stocks.Stocks{{Symbol: "AAPL", Lastsale: "$50.00"}}
+	err := validateOrder(&order.Order{
+		Updates: []*order.Update{{Ticket: "AAPL", Quantity: 1, Price: 50, Action: "BUY"}},
+		Context: []string{"buy"},
+	}, holdings, map[string]float64{"USD": 1, "AAPL": 50}, universe)
+
+	require.Error(t, err)
+	require.ErrorIs(t, err, errInvalidOrder)
 }
 
 func TestGenerateOrderFallsBackToNoTrade(t *testing.T) {

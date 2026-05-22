@@ -37,12 +37,12 @@ jobs:
 
       - name: Commit benchmark updates
         run: |
-          if git diff --quiet; then
+          if [ -z "$(git status --porcelain)" ]; then
             echo "No benchmark updates to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add orders prices stats README.md llm100kbench.db
+          git add orders logs prices stats README.md llm100kbench.db
           git commit -m "Update weekly LLM benchmark"
           git push

@@ -12,6 +12,7 @@ permissions:
 jobs:
   benchmark:
     runs-on: ubuntu-latest
+    environment: prod
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

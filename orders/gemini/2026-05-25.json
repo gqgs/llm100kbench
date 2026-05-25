@@ -1,0 +1,84 @@
+{
+  "updates": [
+    {
+      "ticket": "AAPL",
+      "quantity": 32,
+      "price": 308.82,
+      "action": "BUY",
+      "reason": "AAPL shows a positive price change and is a large-cap tech stock with strong fundamentals."
+    },
+    {
+      "ticket": "TSLA",
+      "quantity": 23,
+      "price": 426.01,
+      "action": "BUY",
+      "reason": "TSLA has a significant positive price change, indicating upward momentum."
+    },
+    {
+      "ticket": "AMD",
+      "quantity": 17,
+      "price": 467.51,
+      "action": "BUY",
+      "reason": "AMD shows a strong positive price change, suggesting a bullish trend."
+    },
+    {
+      "ticket": "ASML",
+      "quantity": 3,
+      "price": 1632.9,
+      "action": "BUY",
+      "reason": "ASML has a notable positive price change and is a key player in the semiconductor industry."
+    },
+    {
+      "ticket": "QCOM",
+      "quantity": 42,
+      "price": 238.16,
+      "action": "BUY",
+      "reason": "QCOM exhibits a very strong positive price change, indicating significant buying interest."
+    },
+    {
+      "ticket": "NXPI",
+      "quantity": 25,
+      "price": 316.47,
+      "action": "BUY",
+      "reason": "NXPI shows a substantial positive price change, suggesting strong market performance."
+    },
+    {
+      "ticket": "CRDO",
+      "quantity": 18,
+      "price": 218.41,
+      "action": "BUY",
+      "reason": "CRDO has the largest positive price change, indicating strong upward momentum."
+    },
+    {
+      "ticket": "GFS",
+      "quantity": 55,
+      "price": 85.64,
+      "action": "BUY",
+      "reason": "GFS shows a significant positive price change, indicating strong buying interest."
+    },
+    {
+      "ticket": "ON",
+      "quantity": 38,
+      "price": 116.2,
+      "action": "BUY",
+      "reason": "ON has a very strong positive price change, suggesting a bullish trend."
+    },
+    {
+      "ticket": "USD",
+      "quantity": 91123,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Reallocating cash to capitalize on strong positive price movements in selected technology stocks."
+    }
+  ],
+  "context": [
+    "Focusing on technology stocks with strong positive price changes. Will monitor for further opportunities."
+  ],
+  "metadata": {
+    "alias": "gemini",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "status": "ok",
+    "generated_at": "2026-05-25T12:00:34Z"
+  }
+}

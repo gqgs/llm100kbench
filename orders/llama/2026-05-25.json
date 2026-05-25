@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "no clear indication to trade"
+  ],
+  "metadata": {
+    "alias": "llama",
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "status": "ok",
+    "generated_at": "2026-05-25T12:00:36Z"
+  }
+}

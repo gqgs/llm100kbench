@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "gpt-oss",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "status": "failed",
+    "generated_at": "2026-05-25T12:00:36Z",
+    "notes": [
+      "first response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01ks79af85ft084r1j7x2rgntz` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8806, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}",
+      "retry response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"message\":\"Request too large for model `openai/gpt-oss-120b` in organization `org_01ks79af85ft084r1j7x2rgntz` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8938, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

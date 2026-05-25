@@ -43,36 +43,45 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2026-05-22)
+## Current Portfolio (2026-05-25)
 
 ### Portfolio Value by Model
 
 ```mermaid
 pie showData
-    "deepseek" : 188681
-    "grok" : 156164
-    "chatgpt" : 127555
-    "gemini" : 100000
+    "deepseek" : 193860
+    "grok" : 154260
+    "chatgpt" : 129156
     "mistral" : 100000
     "llama" : 100000
     "gpt-oss" : 100000
     "qwen" : 100000
+    "gemini" : 72375
 ```
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
-|`chatgpt`|`AAPL`|127486|418|
-|`deepseek`|`AMD`|1349|3|
-|`deepseek`|`ASML`|159200|100|
-|`deepseek`|`MSFT`|2934|7|
-|`deepseek`|`SNPS`|25199|50|
-|`grok`|`AAPL`|14640|48|
-|`grok`|`AMZN`|21745|81|
-|`grok`|`GOOGL`|24810|64|
-|`grok`|`MSFT`|10896|26|
-|`grok`|`NVDA`|84072|383|
-|`gemini`|`USD`|100000|100000|
+|`chatgpt`|`AAPL`|129087|418|
+|`deepseek`|`AMD`|1403|3|
+|`deepseek`|`ASML`|163290|100|
+|`deepseek`|`MSFT`|2930|7|
+|`deepseek`|`SNPS`|26237|50|
+|`grok`|`AAPL`|14823|48|
+|`grok`|`AMZN`|21572|81|
+|`grok`|`GOOGL`|24510|64|
+|`grok`|`MSFT`|10883|26|
+|`grok`|`NVDA`|82471|383|
+|`gemini`|`USD`|8877|8877|
+|`gemini`|`AAPL`|9882|32|
+|`gemini`|`AMD`|7948|17|
+|`gemini`|`ASML`|4899|3|
+|`gemini`|`CRDO`|3931|18|
+|`gemini`|`GFS`|4710|55|
+|`gemini`|`NXPI`|7912|25|
+|`gemini`|`ON`|4416|38|
+|`gemini`|`QCOM`|10003|42|
+|`gemini`|`TSLA`|9798|23|
 |`mistral`|`USD`|100000|100000|
 |`llama`|`USD`|100000|100000|
 |`gpt-oss`|`USD`|100000|100000|
@@ -81,11 +90,11 @@ pie showData
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek`|188681|—|
-|`grok`|156164|—|
-|`chatgpt`|127555|—|
-|`gemini`|100000|—|
+|`deepseek`|193860|—|
+|`grok`|154260|—|
+|`chatgpt`|129156|—|
 |`mistral`|100000|—|
 |`llama`|100000|—|
 |`gpt-oss`|100000|—|
 |`qwen`|100000|—|
+|`gemini`|72375|—|

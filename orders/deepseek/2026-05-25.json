@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "deepseek",
+    "provider": "github",
+    "model": "deepseek/deepseek-r1-0528",
+    "status": "failed",
+    "generated_at": "2026-05-25T12:00:27Z",
+    "notes": [
+      "first response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"code\":\"tokens_limit_reached\",\"message\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\",\"details\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\"}}",
+      "retry response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"code\":\"tokens_limit_reached\",\"message\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\",\"details\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\"}}",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

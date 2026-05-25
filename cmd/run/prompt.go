@@ -48,7 +48,7 @@ Rules:
 - Price must match the supplied market price, except USD which is always 1.
 - Every update must include a concise reason explaining that specific operation. Do not include hidden reasoning or step-by-step analysis.
 - Do not sell more shares than currently held.
-- Do not spend more USD than available from current cash plus sells.
+- Every BUY must be funded by preceding SELL updates in this order, including selling USD cash to invest it.
 - If no trade is justified, return {"updates":[],"context":["reason for holding"]}.
 
 Input:

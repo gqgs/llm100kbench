@@ -65,6 +65,35 @@ func TestValidateOrderAcceptsSellThenBuy(t *testing.T) {
 	require.NoError(t, err)
 }
 
+func TestValidateOrderAcceptsSoldCashFundingBuy(t *testing.T) {
+	holdings := holding.Holdings{{Ticket: "USD", Sum: 100, Quantity: 100}}
+	universe := stocks.Stocks{{Symbol: "AAPL", Lastsale: "$50.00"}}
+	err := validateOrder(&order.Order{
+		Updates: []*order.Update{
+			{Ticket: "USD", Quantity: 100, Price: 1, Action: "SELL", Reason: "Invest available cash."},
+			{Ticket: "AAPL", Quantity: 2, Price: 50, Action: "BUY", Reason: "Allocate to Apple."},
+		},
+		Context: []string{"buy"},
+	}, holdings, map[string]float64{"USD": 1, "AAPL": 50}, universe)
+
+	require.NoError(t, err)
+}
+
+func TestValidateOrderDoesNotCountUnsoldCashAsTradeFunding(t *testing.T) {
+	holdings := holding.Holdings{{Ticket: "USD", Sum: 100, Quantity: 100}}
+	universe := stocks.Stocks{{Symbol: "AAPL", Lastsale: "$50.00"}}
+	err := validateOrder(&order.Order{
+		Updates: []*order.Update{
+			{Ticket: "USD", Quantity: 10, Price: 1, Action: "SELL", Reason: "Invest part of cash."},
+			{Ticket: "AAPL", Quantity: 1, Price: 50, Action: "BUY", Reason: "Allocate to Apple."},
+		},
+		Context: []string{"buy"},
+	}, holdings, map[string]float64{"USD": 1, "AAPL": 50}, universe)
+
+	require.Error(t, err)
+	require.ErrorIs(t, err, errInvalidOrder)
+}
+
 func TestValidateOrderRequiresReason(t *testing.T) {
 	holdings := holding.Holdings{{Ticket: "USD", Sum: 100, Quantity: 100}}
 	universe := stocks.Stocks{{Symbol: "AAPL", Lastsale: "$50.00"}}

@@ -49,7 +49,7 @@ func validateOrder(parsed *order.Order, holdings holding.Holdings, priceMap map[
 		quantities[h.Ticket] = h.Quantity
 	}
 
-	cash := float64(quantities["USD"])
+	var cash float64
 	for i, update := range parsed.Updates {
 		if update == nil {
 			return fmt.Errorf("%w: update %d is nil", errInvalidOrder, i)

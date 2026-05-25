@@ -8,10 +8,10 @@
     "provider": "github",
     "model": "deepseek/deepseek-r1-0528",
     "status": "failed",
-    "generated_at": "2026-05-25T12:00:27Z",
+    "generated_at": "2026-05-25T19:33:04Z",
     "notes": [
-      "first response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"code\":\"tokens_limit_reached\",\"message\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\",\"details\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\"}}",
-      "retry response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"code\":\"tokens_limit_reached\",\"message\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\",\"details\":\"Request body too large for deepseek-r1-0528 model. Max size: 4000 tokens.\"}}",
+      "first response rejected: invalid order: invalid character '.' looking for beginning of object key string",
+      "retry response rejected: llm request failed: 429 Too Many Requests: Too many requests. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).",
       "model failed validation after retry; no trades executed"
     ]
   }

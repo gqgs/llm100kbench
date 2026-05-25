@@ -1,18 +1,13 @@
 {
   "updates": [],
   "context": [
-    "No trades executed because the model did not return a valid order."
+    "No valid order generated based on current market data and holdings."
   ],
   "metadata": {
     "alias": "qwen",
     "provider": "groq",
     "model": "qwen/qwen3-32b",
-    "status": "failed",
-    "generated_at": "2026-05-25T12:00:36Z",
-    "notes": [
-      "first response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"message\":\"Request too large for model `qwen/qwen3-32b` in organization `org_01ks79af85ft084r1j7x2rgntz` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 10934, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}",
-      "retry response rejected: llm request failed: 413 Request Entity Too Large: {\"error\":{\"message\":\"Request too large for model `qwen/qwen3-32b` in organization `org_01ks79af85ft084r1j7x2rgntz` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 11078, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}",
-      "model failed validation after retry; no trades executed"
-    ]
+    "status": "ok",
+    "generated_at": "2026-05-25T19:33:20Z"
   }
 }

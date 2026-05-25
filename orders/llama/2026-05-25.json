@@ -1,13 +1,28 @@
 {
-  "updates": [],
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 50000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Free cash for the target allocation."
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 162,
+      "price": 308.82,
+      "action": "BUY",
+      "reason": "Invest in a large-cap tech stock with a strong track record."
+    }
+  ],
   "context": [
-    "no clear indication to trade"
+    "Monitoring market for further opportunities"
   ],
   "metadata": {
     "alias": "llama",
     "provider": "groq",
     "model": "meta-llama/llama-4-scout-17b-16e-instruct",
     "status": "ok",
-    "generated_at": "2026-05-25T12:00:36Z"
+    "generated_at": "2026-05-25T19:33:16Z"
   }
 }

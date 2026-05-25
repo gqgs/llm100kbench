@@ -15,10 +15,9 @@ type promptStock struct {
 	Price     string  `json:"price"`
 	MarketCap float64 `json:"market_cap"`
 	Sector    string  `json:"sector,omitempty"`
-	Industry  string  `json:"industry,omitempty"`
-	Volume    float64 `json:"volume,omitempty"`
-	PctChange float64 `json:"pct_change,omitempty"`
 }
+
+const maxPromptBytes = 7000
 
 func buildPrompt(holdings holding.Holdings, contexts []string, universe stocks.Stocks) string {
 	payload := map[string]any{
@@ -26,7 +25,7 @@ func buildPrompt(holdings holding.Holdings, contexts []string, universe stocks.S
 		"context":  contexts,
 		"market":   compactMarket(universe),
 	}
-	encoded, _ := json.MarshalIndent(payload, "", "  ")
+	encoded, _ := json.Marshal(payload)
 
 	return strings.TrimSpace(`You're managing a portfolio of publicly tradable assets.
 
@@ -54,6 +53,13 @@ Rules:
 
 Input:
 `) + "\n" + string(encoded)
+}
+
+func limitPromptUniverse(holdings holding.Holdings, contexts []string, universe stocks.Stocks) stocks.Stocks {
+	for len(universe) > 0 && len(buildPrompt(holdings, contexts, universe)) > maxPromptBytes {
+		universe = universe[:len(universe)-1]
+	}
+	return universe
 }
 
 func selectUniverse(rows stocks.Stocks, holdings holding.Holdings, limit int) stocks.Stocks {
@@ -105,9 +111,6 @@ func compactMarket(rows stocks.Stocks) []promptStock {
 			Price:     row.Lastsale,
 			MarketCap: stocks.CleanNumber(row.MarketCap),
 			Sector:    row.Sector,
-			Industry:  row.Industry,
-			Volume:    stocks.CleanNumber(row.Volume),
-			PctChange: stocks.CleanNumber(row.PctChange),
 		})
 	}
 	return market

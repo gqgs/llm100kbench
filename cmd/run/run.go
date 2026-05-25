@@ -102,6 +102,7 @@ func runModel(ctx context.Context, svc service.Service, model modelconfig.Model,
 		return err
 	}
 	universe := selectUniverse(rows, holdings, opts.maxSymbols)
+	universe = limitPromptUniverse(holdings, contexts, universe)
 	prompt := buildPrompt(holdings, contexts, universe)
 
 	client, err := llm.New(model, os.Getenv(model.Env))

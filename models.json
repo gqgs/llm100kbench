@@ -18,8 +18,9 @@
       "alias": "grok",
       "provider": "github",
       "model": "xai/grok-3",
-      "enabled": true,
-      "env": "GITHUB_TOKEN"
+      "enabled": false,
+      "archived": true,
+      "reason": "GitHub Models rejected xai/grok-3 as an unknown model during workflow runs."
     },
     {
       "alias": "gemini",

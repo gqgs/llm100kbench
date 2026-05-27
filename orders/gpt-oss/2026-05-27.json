@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "Holding current allocation; cash insufficient for meaningful rebalancing."
+  ],
+  "metadata": {
+    "alias": "gpt-oss",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "status": "ok",
+    "generated_at": "2026-05-27T08:04:16Z"
+  }
+}

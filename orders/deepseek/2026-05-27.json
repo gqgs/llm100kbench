@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "deepseek",
+    "provider": "github",
+    "model": "deepseek/deepseek-r1-0528",
+    "status": "failed",
+    "generated_at": "2026-05-27T08:04:11Z",
+    "notes": [
+      "first response rejected: invalid order: invalid character 'B' after top-level value",
+      "retry response rejected: llm request failed: 429 Too Many Requests: Too many requests. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service).",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

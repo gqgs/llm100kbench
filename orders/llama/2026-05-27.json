@@ -1,0 +1,35 @@
+{
+  "updates": [
+    {
+      "ticket": "AAPL",
+      "quantity": 162,
+      "price": 308.33,
+      "action": "SELL",
+      "reason": "Sell overvalued AAPL to rebalance portfolio"
+    },
+    {
+      "ticket": "USD",
+      "quantity": 50000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "No immediate need for USD cash"
+    },
+    {
+      "ticket": "NVDA",
+      "quantity": 232,
+      "price": 214.86,
+      "action": "BUY",
+      "reason": "Invest in undervalued NVDA for growth potential"
+    }
+  ],
+  "context": [
+    "Monitoring AAPL and NVDA for potential trades"
+  ],
+  "metadata": {
+    "alias": "llama",
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "status": "ok",
+    "generated_at": "2026-05-27T08:04:15Z"
+  }
+}

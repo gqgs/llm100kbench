@@ -1,0 +1,28 @@
+{
+  "updates": [
+    {
+      "ticket": "NVDA",
+      "quantity": 232,
+      "price": 211.14,
+      "action": "SELL",
+      "reason": "Selling NVDA to free up cash for potential opportunities."
+    },
+    {
+      "ticket": "USD",
+      "quantity": 48975,
+      "price": 1,
+      "action": "BUY",
+      "reason": "Converting sold NVDA into USD cash."
+    }
+  ],
+  "context": [
+    "Holding cash for potential investments"
+  ],
+  "metadata": {
+    "alias": "llama",
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "status": "ok",
+    "generated_at": "2026-06-01T13:49:12Z"
+  }
+}

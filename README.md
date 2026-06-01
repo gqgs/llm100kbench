@@ -43,52 +43,52 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2026-05-27)
+## Current Portfolio (2026-06-01)
 
 ### Portfolio Value by Model
 
 ```mermaid
 pie showData
-    "deepseek" : 194355
-    "chatgpt" : 128951
+    "deepseek" : 189757
+    "chatgpt" : 130510
+    "gpt-oss" : 101044
     "mistral" : 100000
     "qwen" : 100000
-    "gpt-oss" : 99841
-    "gemini" : 82817
-    "llama" : 49848
+    "gemini" : 82365
+    "llama" : 48975
 ```
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
-|`chatgpt`|`AAPL`|128882|418|
-|`deepseek`|`AMD`|1512|3|
-|`deepseek`|`ASML`|163203|100|
-|`deepseek`|`MSFT`|2912|7|
-|`deepseek`|`SNPS`|26728|50|
+|`chatgpt`|`AAPL`|130441|418|
+|`deepseek`|`AMD`|1548|3|
+|`deepseek`|`ASML`|161276|100|
+|`deepseek`|`MSFT`|3152|7|
+|`deepseek`|`SNPS`|23781|50|
 |`gemini`|`USD`|6335|6335|
-|`gemini`|`AAPL`|12950|42|
-|`gemini`|`AMD`|9574|19|
-|`gemini`|`ASML`|6528|4|
-|`gemini`|`CRDO`|4433|20|
-|`gemini`|`GFS`|5398|60|
-|`gemini`|`NXPI`|9980|30|
-|`gemini`|`ON`|5334|42|
-|`gemini`|`QCOM`|11446|46|
-|`gemini`|`TSLA`|10840|25|
+|`gemini`|`AAPL`|13107|42|
+|`gemini`|`AMD`|9806|19|
+|`gemini`|`ASML`|6451|4|
+|`gemini`|`CRDO`|4721|20|
+|`gemini`|`GFS`|4798|60|
+|`gemini`|`NXPI`|9640|30|
+|`gemini`|`ON`|5066|42|
+|`gemini`|`QCOM`|11547|46|
+|`gemini`|`TSLA`|10895|25|
 |`mistral`|`USD`|100000|100000|
-|`llama`|`NVDA`|49848|232|
-|`gpt-oss`|`USD`|250|250|
-|`gpt-oss`|`AAPL`|99591|323|
+|`llama`|`USD`|48975|48975|
+|`gpt-oss`|`AAPL`|100795|323|
+|`gpt-oss`|`CMCSA`|249|10|
 |`qwen`|`USD`|100000|100000|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek`|194355|—|
-|`chatgpt`|128951|—|
+|`deepseek`|189757|—|
+|`chatgpt`|130510|—|
+|`gpt-oss`|101044|—|
 |`mistral`|100000|—|
 |`qwen`|100000|—|
-|`gpt-oss`|99841|—|
-|`gemini`|82817|—|
-|`llama`|49848|—|
+|`gemini`|82365|—|
+|`llama`|48975|—|

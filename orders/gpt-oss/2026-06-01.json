@@ -1,0 +1,28 @@
+{
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 250,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Free cash for new position."
+    },
+    {
+      "ticket": "CMCSA",
+      "quantity": 10,
+      "price": 24.87,
+      "action": "BUY",
+      "reason": "Add diversification with low-cost stock."
+    }
+  ],
+  "context": [
+    "Allocated cash to CMCSA for diversification while maintaining AAPL exposure."
+  ],
+  "metadata": {
+    "alias": "gpt-oss",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "status": "ok",
+    "generated_at": "2026-06-01T13:49:13Z"
+  }
+}

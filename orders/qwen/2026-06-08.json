@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "qwen",
+    "provider": "groq",
+    "model": "qwen/qwen3-32b",
+    "status": "failed",
+    "generated_at": "2026-06-08T12:44:59Z",
+    "notes": [
+      "first response rejected: invalid order: insufficient USD to buy AAPL; need 99885.50 have 0.00",
+      "retry response rejected: invalid order: insufficient USD to buy AAPL; need 99885.50 have 0.00",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

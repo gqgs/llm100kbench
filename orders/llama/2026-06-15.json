@@ -1,0 +1,31 @@
+{
+  "updates": [
+    {
+      "ticket": "AAPL",
+      "quantity": 156,
+      "price": 295.845,
+      "action": "SELL",
+      "reason": "Selling AAPL to rebalance portfolio"
+    },
+    {
+      "ticket": "USD",
+      "quantity": 46127,
+      "price": 1,
+      "action": "BUY",
+      "reason": "Converting AAPL proceeds to USD"
+    }
+  ],
+  "context": [
+    "Rebalancing portfolio by selling AAPL"
+  ],
+  "metadata": {
+    "alias": "llama",
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "status": "ok",
+    "generated_at": "2026-06-15T14:37:51Z",
+    "notes": [
+      "first response rejected: invalid order: json: cannot unmarshal number 887.535 into Go struct field Update.updates.quantity of type int"
+    ]
+  }
+}

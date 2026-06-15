@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "Holding current allocation; no trade improves portfolio value given constraints."
+  ],
+  "metadata": {
+    "alias": "gpt-oss",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "status": "ok",
+    "generated_at": "2026-06-15T14:37:53Z"
+  }
+}

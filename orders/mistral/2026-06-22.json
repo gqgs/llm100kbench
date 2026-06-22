@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "No trades justified with current holdings and market conditions"
+  ],
+  "metadata": {
+    "alias": "mistral",
+    "provider": "mistral",
+    "model": "mistral-small-2603",
+    "status": "ok",
+    "generated_at": "2026-06-22T13:46:44Z"
+  }
+}

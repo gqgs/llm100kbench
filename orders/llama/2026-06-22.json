@@ -1,0 +1,28 @@
+{
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 10000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Free cash for rebalancing."
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 33,
+      "price": 298.01,
+      "action": "BUY",
+      "reason": "Investing in tech giant with strong fundamentals."
+    }
+  ],
+  "context": [
+    "Rebalancing portfolio by investing in AAPL"
+  ],
+  "metadata": {
+    "alias": "llama",
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "status": "ok",
+    "generated_at": "2026-06-22T13:46:45Z"
+  }
+}

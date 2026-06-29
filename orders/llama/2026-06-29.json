@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "llama",
+    "provider": "groq",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "status": "failed",
+    "generated_at": "2026-06-29T12:44:44Z",
+    "notes": [
+      "first response rejected: invalid order: json: cannot unmarshal number 9367.74 into Go struct field Update.updates.quantity of type int",
+      "retry response rejected: invalid order: insufficient USD to buy USD; need 9368.00 have 9364.74",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

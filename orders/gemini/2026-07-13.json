@@ -1,0 +1,16 @@
+{
+  "updates": [],
+  "context": [
+    "Previous response was rejected due to service unavailability. No trades executed."
+  ],
+  "metadata": {
+    "alias": "gemini",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "status": "ok",
+    "generated_at": "2026-07-13T11:32:04Z",
+    "notes": [
+      "first response rejected: llm request failed: 503 Service Unavailable: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}"
+    ]
+  }
+}

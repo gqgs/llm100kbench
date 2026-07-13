@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "No trade improves portfolio value given current holdings and market prices."
+  ],
+  "metadata": {
+    "alias": "gpt-oss",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "status": "ok",
+    "generated_at": "2026-07-13T11:32:09Z"
+  }
+}

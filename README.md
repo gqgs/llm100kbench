@@ -43,53 +43,53 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2026-07-13)
+## Current Portfolio (2026-07-20)
 
 ### Portfolio Value by Model
 
 ```mermaid
 pie showData
-    "deepseek" : 206376
-    "chatgpt" : 131873
-    "gpt-oss" : 102084
+    "deepseek" : 198216
+    "chatgpt" : 139572
+    "gpt-oss" : 108036
     "mistral" : 100000
     "qwen" : 100000
-    "gemini" : 78349
-    "llama" : 47508
+    "gemini" : 73102
+    "llama" : 48115
 ```
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
-|`chatgpt`|`AAPL`|131804|418|
-|`deepseek`|`AMD`|1674|3|
-|`deepseek`|`ASML`|179732|100|
-|`deepseek`|`MSFT`|2696|7|
-|`deepseek`|`SNPS`|22275|50|
-|`gemini`|`AAPL`|13243|42|
-|`gemini`|`AMD`|10600|19|
-|`gemini`|`ASML`|7189|4|
-|`gemini`|`CRDO`|5156|20|
-|`gemini`|`GFS`|4138|60|
-|`gemini`|`NVDA`|6329|30|
-|`gemini`|`NXPI`|8768|30|
-|`gemini`|`ON`|4030|42|
-|`gemini`|`QCOM`|8701|46|
-|`gemini`|`TSLA`|10194|25|
+|`chatgpt`|`AAPL`|139503|418|
+|`deepseek`|`AMD`|1487|3|
+|`deepseek`|`ASML`|174758|100|
+|`deepseek`|`MSFT`|2757|7|
+|`deepseek`|`SNPS`|19214|50|
+|`gemini`|`AAPL`|14017|42|
+|`gemini`|`AMD`|9419|19|
+|`gemini`|`ASML`|6990|4|
+|`gemini`|`CRDO`|4054|20|
+|`gemini`|`GFS`|3449|60|
+|`gemini`|`NVDA`|6084|30|
+|`gemini`|`NXPI`|7996|30|
+|`gemini`|`ON`|3670|42|
+|`gemini`|`QCOM`|7902|46|
+|`gemini`|`TSLA`|9521|25|
 |`mistral`|`USD`|100000|100000|
 |`llama`|`USD`|37102|37102|
-|`llama`|`AAPL`|10406|33|
-|`gpt-oss`|`AAPL`|101848|323|
-|`gpt-oss`|`CMCSA`|236|10|
+|`llama`|`AAPL`|11013|33|
+|`gpt-oss`|`AAPL`|107798|323|
+|`gpt-oss`|`CMCSA`|238|10|
 |`qwen`|`USD`|100000|100000|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek`|206376|—|
-|`chatgpt`|131873|—|
-|`gpt-oss`|102084|—|
+|`deepseek`|198216|—|
+|`chatgpt`|139572|—|
+|`gpt-oss`|108036|—|
 |`mistral`|100000|—|
 |`qwen`|100000|—|
-|`gemini`|78349|—|
-|`llama`|47508|—|
+|`gemini`|73102|—|
+|`llama`|48115|—|

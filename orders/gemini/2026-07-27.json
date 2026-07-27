@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "Previous response was rejected due to service unavailability. No trades executed."
+  ],
+  "metadata": {
+    "alias": "gemini",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "status": "ok",
+    "generated_at": "2026-07-27T11:42:52Z"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "updates": [],
+  "context": [
+    "Holdings already optimal; no trade improves portfolio value."
+  ],
+  "metadata": {
+    "alias": "gpt-oss",
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "status": "ok",
+    "generated_at": "2026-08-03T11:45:33Z"
+  }
+}

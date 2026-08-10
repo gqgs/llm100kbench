@@ -1,0 +1,16 @@
+{
+  "updates": [],
+  "context": [
+    "Previous response was rejected due to an invalid order (selling 10000 USD with 0 held). Re-evaluating trades."
+  ],
+  "metadata": {
+    "alias": "gemini",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "status": "ok",
+    "generated_at": "2026-08-10T09:48:54Z",
+    "notes": [
+      "first response rejected: invalid order: cannot sell 10000 USD with 0 held"
+    ]
+  }
+}

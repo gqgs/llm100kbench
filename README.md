@@ -43,53 +43,53 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2026-08-17)
+## Current Portfolio (2026-08-24)
 
 ### Portfolio Value by Model
 
 ```mermaid
 pie showData
-    "deepseek" : 210494
-    "chatgpt" : 127948
+    "deepseek" : 201072
+    "chatgpt" : 129377
+    "gpt-oss" : 100189
     "mistral" : 100000
     "qwen" : 100000
-    "gpt-oss" : 99077
-    "gemini" : 71922
-    "llama" : 47198
+    "gemini" : 69325
+    "llama" : 47311
 ```
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
-|`chatgpt`|`AAPL`|127879|418|
-|`deepseek`|`AMD`|1543|3|
-|`deepseek`|`ASML`|184408|100|
-|`deepseek`|`MSFT`|3468|7|
-|`deepseek`|`SNPS`|21075|50|
-|`gemini`|`AAPL`|12849|42|
-|`gemini`|`AMD`|9773|19|
-|`gemini`|`ASML`|7376|4|
-|`gemini`|`CRDO`|5198|20|
-|`gemini`|`GFS`|3275|60|
-|`gemini`|`NVDA`|6755|30|
-|`gemini`|`NXPI`|7041|30|
-|`gemini`|`ON`|3472|42|
-|`gemini`|`QCOM`|7626|46|
-|`gemini`|`TSLA`|8557|25|
+|`chatgpt`|`AAPL`|129308|418|
+|`deepseek`|`AMD`|1420|3|
+|`deepseek`|`ASML`|176376|100|
+|`deepseek`|`MSFT`|3383|7|
+|`deepseek`|`SNPS`|19894|50|
+|`gemini`|`AAPL`|12993|42|
+|`gemini`|`AMD`|8992|19|
+|`gemini`|`ASML`|7055|4|
+|`gemini`|`CRDO`|4611|20|
+|`gemini`|`GFS`|2883|60|
+|`gemini`|`NVDA`|6442|30|
+|`gemini`|`NXPI`|6767|30|
+|`gemini`|`ON`|3117|42|
+|`gemini`|`QCOM`|7394|46|
+|`gemini`|`TSLA`|9072|25|
 |`mistral`|`USD`|100000|100000|
 |`llama`|`USD`|37102|37102|
-|`llama`|`AAPL`|10096|33|
-|`gpt-oss`|`AAPL`|98815|323|
-|`gpt-oss`|`CMCSA`|262|10|
+|`llama`|`AAPL`|10209|33|
+|`gpt-oss`|`AAPL`|99920|323|
+|`gpt-oss`|`CMCSA`|268|10|
 |`qwen`|`USD`|100000|100000|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek`|210494|—|
-|`chatgpt`|127948|—|
+|`deepseek`|201072|—|
+|`chatgpt`|129377|—|
+|`gpt-oss`|100189|—|
 |`mistral`|100000|—|
 |`qwen`|100000|—|
-|`gpt-oss`|99077|—|
-|`gemini`|71922|—|
-|`llama`|47198|—|
+|`gemini`|69325|—|
+|`llama`|47311|—|

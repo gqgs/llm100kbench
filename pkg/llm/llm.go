@@ -34,9 +34,9 @@ func New(model modelconfig.Model, apiKey string) (Client, error) {
 	case "github":
 		return NewOpenAICompatible("https://models.github.ai/inference/chat/completions", model.Model, apiKey), nil
 	case "groq":
-		return NewOpenAICompatible("https://api.groq.com/openai/v1/chat/completions", model.Model, apiKey), nil
+		return newOpenAICompatible("https://api.groq.com/openai/v1/chat/completions", model.Model, apiKey, true), nil
 	case "mistral":
-		return NewOpenAICompatible("https://api.mistral.ai/v1/chat/completions", model.Model, apiKey), nil
+		return newOpenAICompatible("https://api.mistral.ai/v1/chat/completions", model.Model, apiKey, true), nil
 	case "gemini":
 		return NewGemini(model.Model, apiKey), nil
 	default:
@@ -50,15 +50,21 @@ type openAICompatible struct {
 	apiKey   string
 	client   httpClient
 	wait     waitFunc
+	jsonMode bool
 }
 
 func NewOpenAICompatible(endpoint, model, apiKey string) Client {
+	return newOpenAICompatible(endpoint, model, apiKey, false)
+}
+
+func newOpenAICompatible(endpoint, model, apiKey string, jsonMode bool) Client {
 	return &openAICompatible{
 		endpoint: endpoint,
 		model:    model,
 		apiKey:   apiKey,
 		client:   http.DefaultClient,
 		wait:     waitContext,
+		jsonMode: jsonMode,
 	}
 }
 
@@ -70,6 +76,14 @@ func (c *openAICompatible) Generate(ctx context.Context, prompt string) (string,
 			{"role": "user", "content": prompt},
 		},
 		"temperature": 0.2,
+	}
+	if c.jsonMode {
+		body["response_format"] = map[string]string{"type": "json_object"}
+	}
+	if strings.HasPrefix(c.model, "qwen/") {
+		// Qwen reasoning output must not be mixed into the JSON response body.
+		body["reasoning_effort"] = "none"
+		body["reasoning_format"] = "hidden"
 	}
 	encoded, err := json.Marshal(body)
 	if err != nil {

@@ -2,6 +2,7 @@ package llm
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -9,18 +10,54 @@ import (
 	"testing"
 	"time"
 
+	"github.com/gqgs/llminvestbench/pkg/modelconfig"
 	"github.com/stretchr/testify/require"
 )
 
 type fakeHTTPClient struct {
 	responses []*http.Response
+	requests  []*http.Request
 	calls     int
 }
 
 func (f *fakeHTTPClient) Do(req *http.Request) (*http.Response, error) {
+	f.requests = append(f.requests, req)
 	response := f.responses[f.calls]
 	f.calls++
 	return response, nil
+}
+
+func TestProviderClientsRequestJSONMode(t *testing.T) {
+	tests := []struct {
+		name     string
+		provider string
+		model    string
+	}{
+		{name: "mistral", provider: "mistral", model: "mistral-small-2603"},
+		{name: "qwen", provider: "groq", model: "qwen/qwen3.8-27b"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			httpClient := &fakeHTTPClient{responses: []*http.Response{
+				response(http.StatusOK, `{"choices":[{"message":{"content":"{\"updates\":[],\"context\":[\"hold\"]}"}}]}`, nil),
+			}}
+			created, err := New(modelconfig.Model{Provider: tt.provider, Model: tt.model}, "key")
+			require.NoError(t, err)
+			client := created.(*openAICompatible)
+			client.client = httpClient
+
+			_, err = client.Generate(context.Background(), "return JSON")
+			require.NoError(t, err)
+
+			var body map[string]any
+			require.NoError(t, json.NewDecoder(httpClient.requests[0].Body).Decode(&body))
+			require.Equal(t, map[string]any{"type": "json_object"}, body["response_format"])
+			if tt.name == "qwen" {
+				require.Equal(t, "none", body["reasoning_effort"])
+				require.Equal(t, "hidden", body["reasoning_format"])
+			}
+		})
+	}
 }
 
 func TestOpenAICompatibleRetriesRateLimitUsingRetryAfter(t *testing.T) {

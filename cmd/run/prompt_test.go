@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 
 	"github.com/gqgs/llminvestbench/pkg/holding"
@@ -41,6 +42,13 @@ func TestBuildPromptOmitsUnneededMarketFields(t *testing.T) {
 	require.NotContains(t, prompt, "industry")
 	require.NotContains(t, prompt, "volume")
 	require.NotContains(t, prompt, "pct_change")
+}
+
+func TestBuildPromptDeduplicatesRepeatedContext(t *testing.T) {
+	prompt := buildPrompt(nil, []string{"hold cash", "hold cash", "new evidence"}, nil)
+
+	require.Equal(t, 1, strings.Count(prompt, `"hold cash"`))
+	require.Contains(t, prompt, `"new evidence"`)
 }
 
 func TestLimitPromptUniverseKeepsPromptUnderBudget(t *testing.T) {

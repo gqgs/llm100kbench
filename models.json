@@ -53,7 +53,7 @@
     {
       "alias": "qwen",
       "provider": "groq",
-      "model": "qwen/qwen3-32b",
+      "model": "qwen/qwen3.8-27b",
       "enabled": true,
       "env": "GROQ_API_KEY"
     },

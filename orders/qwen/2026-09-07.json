@@ -1,0 +1,84 @@
+{
+  "updates": [
+    {
+      "ticket": "USD",
+      "quantity": 20000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Allocate cash to NVDA."
+    },
+    {
+      "ticket": "NVDA",
+      "quantity": 86,
+      "price": 230.36,
+      "action": "BUY",
+      "reason": "High market cap tech leader with strong AI demand."
+    },
+    {
+      "ticket": "USD",
+      "quantity": 20000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Allocate cash to MSFT."
+    },
+    {
+      "ticket": "MSFT",
+      "quantity": 40,
+      "price": 499.7,
+      "action": "BUY",
+      "reason": "Diversified tech giant with robust cloud and AI infrastructure."
+    },
+    {
+      "ticket": "USD",
+      "quantity": 20000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Allocate cash to AAPL."
+    },
+    {
+      "ticket": "AAPL",
+      "quantity": 62,
+      "price": 319.97,
+      "action": "BUY",
+      "reason": "Strong consumer brand and ecosystem lock-in."
+    },
+    {
+      "ticket": "USD",
+      "quantity": 20000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Allocate cash to GOOGL."
+    },
+    {
+      "ticket": "GOOGL",
+      "quantity": 59,
+      "price": 338.46,
+      "action": "BUY",
+      "reason": "Dominant search and cloud provider with strong cash flow."
+    },
+    {
+      "ticket": "USD",
+      "quantity": 20000,
+      "price": 1,
+      "action": "SELL",
+      "reason": "Allocate cash to AMZN."
+    },
+    {
+      "ticket": "AMZN",
+      "quantity": 77,
+      "price": 258.51,
+      "action": "BUY",
+      "reason": "E-commerce leader with high-margin AWS cloud business."
+    }
+  ],
+  "context": [
+    "Initial allocation of $100k into 5 major tech stocks (NVDA, MSFT, AAPL, GOOGL, AMZN) to establish a core portfolio. Remaining $0 cash."
+  ],
+  "metadata": {
+    "alias": "qwen",
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "status": "ok",
+    "generated_at": "2026-09-07T14:16:03Z"
+  }
+}

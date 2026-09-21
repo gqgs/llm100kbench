@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "mistral",
+    "provider": "mistral",
+    "model": "mistral-small-2603",
+    "status": "failed",
+    "generated_at": "2026-09-21T15:09:37Z",
+    "notes": [
+      "first response rejected: llm request failed: 429 Too Many Requests: {\"object\":\"error\",\"message\":\"Rate limit exceeded\",\"type\":\"rate_limited\",\"param\":null,\"code\":\"1300\",\"raw_status_code\":429}",
+      "retry response rejected: llm request failed: 429 Too Many Requests: {\"object\":\"error\",\"message\":\"Rate limit exceeded\",\"type\":\"rate_limited\",\"param\":null,\"code\":\"1300\",\"raw_status_code\":429}",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

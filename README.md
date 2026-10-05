@@ -43,58 +43,58 @@ This benchmark may be a good proxy to measure how well LLMs are able to coordina
 
 The most recent prompt with the clear guidelines can be see [here](./cmd/create/prompt.txt) and [here](./cmd/list/prompt.txt).
 
-## Current Portfolio (2026-09-28)
+## Current Portfolio (2026-10-05)
 
 ### Portfolio Value by Model
 
 ```mermaid
 pie showData
-    "deepseek" : 201187
-    "chatgpt" : 142636
-    "gpt-oss" : 110385
+    "deepseek" : 216750
+    "chatgpt" : 139551
+    "gpt-oss" : 107998
     "mistral" : 100000
-    "gemini" : 76172
-    "qwen" : 52621
-    "llama" : 48357
+    "gemini" : 76574
+    "llama" : 48114
+    "qwen" : 38830
 ```
 
 | Model | Ticket | Sum | Quantity |
 |-------|-------|-------|--------|
 |`chatgpt`|`USD`|69|69|
-|`chatgpt`|`AAPL`|142567|418|
-|`deepseek`|`AMD`|1892|3|
-|`deepseek`|`ASML`|174394|100|
-|`deepseek`|`MSFT`|3613|7|
-|`deepseek`|`SNPS`|21288|50|
-|`gemini`|`AAPL`|14325|42|
-|`gemini`|`AMD`|11982|19|
-|`gemini`|`ASML`|6976|4|
-|`gemini`|`CRDO`|4219|20|
-|`gemini`|`GFS`|2940|60|
-|`gemini`|`NVDA`|6752|30|
-|`gemini`|`NXPI`|7142|30|
-|`gemini`|`ON`|3242|42|
-|`gemini`|`QCOM`|9291|46|
-|`gemini`|`TSLA`|9303|25|
+|`chatgpt`|`AAPL`|139482|418|
+|`deepseek`|`AMD`|1902|3|
+|`deepseek`|`ASML`|186731|100|
+|`deepseek`|`MSFT`|3623|7|
+|`deepseek`|`SNPS`|24495|50|
+|`gemini`|`AAPL`|14015|42|
+|`gemini`|`AMD`|12044|19|
+|`gemini`|`ASML`|7469|4|
+|`gemini`|`CRDO`|4373|20|
+|`gemini`|`GFS`|3010|60|
+|`gemini`|`NVDA`|7018|30|
+|`gemini`|`NXPI`|7310|30|
+|`gemini`|`ON`|3565|42|
+|`gemini`|`QCOM`|8504|46|
+|`gemini`|`TSLA`|9265|25|
 |`mistral`|`USD`|100000|100000|
 |`llama`|`USD`|37102|37102|
-|`llama`|`AAPL`|11255|33|
-|`gpt-oss`|`AAPL`|110166|323|
-|`gpt-oss`|`CMCSA`|219|10|
-|`qwen`|`AMGN`|8292|20|
-|`qwen`|`AVGO`|7056|20|
-|`qwen`|`LIN`|9398|20|
-|`qwen`|`META`|15033|20|
-|`qwen`|`TSLA`|7442|20|
-|`qwen`|`WMT`|5399|50|
+|`llama`|`AAPL`|11012|33|
+|`gpt-oss`|`AAPL`|107782|323|
+|`gpt-oss`|`CMCSA`|216|10|
+|`qwen`|`AMGN`|8061|20|
+|`qwen`|`AVGO`|7103|20|
+|`qwen`|`META`|14562|20|
+|`qwen`|`MSFT`|1553|3|
+|`qwen`|`NVDA`|2340|10|
+|`qwen`|`WMT`|5213|50|
 
 
 | Model | Total Sum | Change |
 |-------|-----------|--------|
-|`deepseek`|201187|—|
-|`chatgpt`|142636|—|
-|`gpt-oss`|110385|—|
+|`deepseek`|216750|—|
+|`chatgpt`|139551|—|
+|`gpt-oss`|107998|—|
 |`mistral`|100000|—|
-|`gemini`|76172|—|
-|`qwen`|52621|—|
-|`llama`|48357|—|
+|`gemini`|76574|—|
+|`llama`|48114|—|
+|`qwen`|38830|—|

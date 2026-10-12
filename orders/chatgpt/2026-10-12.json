@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "chatgpt",
+    "provider": "github",
+    "model": "openai/gpt-4.1",
+    "status": "failed",
+    "generated_at": "2026-10-12T17:57:13Z",
+    "notes": [
+      "first response rejected: invalid character 'O' looking for beginning of value",
+      "retry response rejected: invalid character 'O' looking for beginning of value",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "updates": [],
+  "context": [
+    "No trades executed because the model did not return a valid order."
+  ],
+  "metadata": {
+    "alias": "qwen",
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "status": "failed",
+    "generated_at": "2026-10-19T15:38:12Z",
+    "notes": [
+      "first response rejected: llm request failed: 429 Too Many Requests: {\"error\":{\"message\":\"Request too large for model `qwen/qwen3.8-27b` in organization `org_01ks79af85ft084r1j7x2rgntz` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1006. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing\",\"type\":\"tokens\",\"code\":\"rate_limit_exceeded\"}}",
+      "retry response rejected: invalid order: insufficient USD to buy MSFT; need 2645.25 have 1765.80",
+      "model failed validation after retry; no trades executed"
+    ]
+  }
+}
